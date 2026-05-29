@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve for 11+ Guests | KS on the Keys | Ottawa South</title>
+  <meta name="description" content="Request a group reservation for 11 or more guests at KS on the Keys in Ottawa. Perfect for family gatherings, business dinners, and celebrations.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Custom CSS for Premium Form styling matching the dark theme */
+    body {
+      background: #1a1a1a;
+      color: #F5F0E8;
+    }
+    
+    .booking-container {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .booking-card {
+      background: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(196, 154, 60, 0.15);
+      border-radius: var(--radius-lg);
+      padding: 50px 40px;
+      margin-bottom: 80px;
+      box-shadow: var(--shadow-lg);
+    }
+
+    .booking-card h2 {
+      font-family: var(--font-serif);
+      font-size: 2.2rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+      text-align: center;
+    }
+
+    .booking-card .form-intro {
+      font-size: 1rem;
+      color: rgba(245, 240, 232, 0.7);
+      text-align: center;
+      margin-bottom: 40px;
+      line-height: 1.6;
+    }
+
+    .form-group {
+      margin-bottom: 24px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 8px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.15);
+      border-radius: 6px;
+      padding: 14px 16px;
+      color: #F5F0E8;
+      font-size: 1rem;
+      font-family: var(--font-sans);
+      transition: all 0.3s ease;
+      box-sizing: border-box;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--gold);
+      background: rgba(255, 255, 255, 0.08);
+      box-shadow: 0 0 10px rgba(196, 154, 60, 0.25);
+    }
+
+    .form-group select option {
+      background: #1a1a1a;
+      color: #F5F0E8;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .btn-submit {
+      width: 100%;
+      background: var(--burgundy);
+      color: #fff;
+      border: none;
+      padding: 18px;
+      font-size: 1rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .btn-submit:hover {
+      background: #a93226;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+    }
+
+    @media (max-width: 768px) {
+      .form-row {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .booking-card {
+        padding: 30px 20px;
+      }
+    }
+  </style>
+</head>
+<body class="dark-theme">
+
+  <!-- ══ TOP BAR ══ -->
+  <div class="top-bar">
+    <div class="top-bar-inner container">
+      <span>📍 1029 Daze St, Ottawa, ON</span>
+      <span class="separator">|</span>
+      <a href="tel:+16135210498">📞 (613) 521-0498</a>
+      <span class="separator">|</span>
+      <a href="mailto:RSVP@ksrestaurant.ca">✉️ RSVP@ksrestaurant.ca</a>
+      <span class="separator">|</span>
+      <span>Open Tue–Sun &nbsp;·&nbsp; <strong>Walk-ins Welcome</strong></span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar subpage-nav" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo" aria-label="KS on the Keys Home">
+        <img src="images/logo.png" alt="KS on the Keys" class="logo-img">
+      </a>
+
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="index.html#about">About</a></li>
+        <li class="has-dropdown">
+          <span>Menu ▾</span>
+          <ul class="dropdown">
+            <li><a href="index.html#menu">Full Menu</a></li>
+            <li><a href="dailyspecials.html" target="_blank">Daily Specials</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="event-spaces.html">Event Spaces</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="corporate-events.html" target="_blank">Corporate Events</a></li>
+            <li><a href="nonprofits.html" target="_blank">Non-Profits</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Buffets ▾</span>
+          <ul class="dropdown">
+            <li><a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a></li>
+            <li><a href="brunch-buffet.html" target="_blank">Brunch Buffet</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Upcoming Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="big-band-ottawa.html">Big Band Ottawa</a></li>
+            <li><a href="ottawa-blackjacks.html">Ottawa Blackjacks</a></li>
+            <li><a href="grad-season.html">Grad Season 2026</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Reserve ▾</span>
+          <ul class="dropdown">
+            <li><a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Up to 10 Guests</a></li>
+            <li><a href="book-11plus.html">11+ Guests</a></li>
+            <li><a href="book-large.html">Large Group Event</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#faq">FAQ</a></li>
+                <li class="has-dropdown order-dropdown">
+          <a href="#" class="nav-cta" id="order-now-nav">Order Now ▾</a>
+          <ul class="dropdown dropdown-right" style="min-width: 200px;">
+            <li><a href="https://order.tbdine.com/pickup/30078/menu" target="_blank">Pickup</a></li>
+            <li><a href="https://www.ubereats.com/ca/store/ks-on-the-keys-restaurant/mw7AnpmYQ72yR1jO_5y1fw?srsltid=AfmBOop7SM1DoP4ko2bmMMWE7K1Ss4xnOpDgI-W4P5cbwxT4GvgxUe4j" target="_blank">Uber Eats</a></li>
+            <li><a href="https://www.skipthedishes.com/ks-on-the-keys-restaurant" target="_blank">Skip the Dishes</a></li>
+            <li><a href="https://www.doordash.com/store/ks-on-the-keys-ottawa-298448/1000/?srsltid=AfmBOooBdAlGQBW514EKMfhkyeXV0IZvEtwex9keIY4OxJLaS16fcusN" target="_blank">DoorDash</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#menu" class="mobile-link">Menu</a>
+    <a href="dailyspecials.html" target="_blank">Daily Specials</a>
+    <a href="event-spaces.html" class="mobile-link">Event Spaces</a>
+    <a href="catering.html" class="mobile-link">Catering</a>
+    <a href="corporate-events.html" target="_blank">Corporate Events</a>
+    <a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a>
+    <a href="brunch-buffet.html" target="_blank">Brunch Buffet</a>
+    <a href="big-band-ottawa.html" class="mobile-link">Big Band Ottawa</a>
+    <a href="ottawa-blackjacks.html" class="mobile-link">Ottawa Blackjacks</a>
+    <a href="grad-season.html" class="mobile-link">Grad Season 2026</a>
+    <a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Reserve a Table</a>
+    <a href="book-large.html" class="mobile-link">Book a Large Event</a>
+    <a href="index.html#faq" class="mobile-link">FAQ</a>
+        <div class="mobile-dropdown-container">
+      <span class="mobile-link" style="color: var(--gold-light) !important; font-weight: 700; margin-top: 12px; display: block;">🍕 Order Online ▾</span>
+      <div class="mobile-sublinks" style="padding-left: 20px; margin-bottom: 15px;">
+        <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Pickup</a>
+        <a href="https://www.ubereats.com/ca/store/ks-on-the-keys-restaurant/mw7AnpmYQ72yR1jO_5y1fw?srsltid=AfmBOop7SM1DoP4ko2bmMMWE7K1Ss4xnOpDgI-W4P5cbwxT4GvgxUe4j" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Uber Eats</a>
+        <a href="https://www.skipthedishes.com/ks-on-the-keys-restaurant" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Skip the Dishes</a>
+        <a href="https://www.doordash.com/store/ks-on-the-keys-ottawa-298448/1000/?srsltid=AfmBOooBdAlGQBW514EKMfhkyeXV0IZvEtwex9keIY4OxJLaS16fcusN" target="_blank" class="mobile-link" style="font-size: 0.9rem;">DoorDash</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="subpage-hero" aria-label="Book for 11+ Guests">
+    <div class="subpage-hero-bg" style="background-image: url('images/events/mezzanine-2.jpeg');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content">
+      <p class="hero-eyebrow" style="justify-content:center;">Group Bookings</p>
+      <h1 class="hero-title" style="font-size:clamp(2rem, 5vw, 4rem);">Group Dining <em>(11+ Guests)</em></h1>
+      <p class="hero-subtitle" style="margin: 0 auto; max-width:700px;">Plan a memorable family dinner, celebration, or casual get-together in our spacious dining room.</p>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section class="subpage-content">
+    <div class="booking-container">
+      <div class="booking-card">
+        <h2>Request a Group Booking</h2>
+        <p class="form-intro">For groups of 11 to 20+ guests, please submit this inquiry form. Our team will review your request and confirm availability as quickly as possible.</p>
+        
+        <form action="https://formspree.io/f/xkoydrvj" method="POST">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="first_name">First Name *</label>
+              <input type="text" id="first_name" name="First name" required placeholder="John">
+            </div>
+            <div class="form-group">
+              <label for="last_name">Last Name *</label>
+              <input type="text" id="last_name" name="Last name" required placeholder="Doe">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="email">Email *</label>
+              <input type="email" id="email" name="email" required placeholder="john@example.com">
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone *</label>
+              <input type="text" id="phone" name="Phone" required placeholder="(613) 555-0123">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="guests">Number of guests expected to attend *</label>
+              <input type="text" id="guests" name="Number of guests expected to attend" required placeholder="e.g. 15">
+            </div>
+            <div class="form-group">
+              <label for="date">Select a Date *</label>
+              <input type="date" id="date" name="Select a date" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="time">Time</label>
+              <input type="text" id="time" name="Time" placeholder="e.g. 6:00 PM">
+            </div>
+            <div class="form-group">
+              <label for="length">Length of Event</label>
+              <input type="text" id="length" name="Length of Event" placeholder="e.g. 3 hours">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="event_type">Type of Event</label>
+              <input type="text" id="event_type" name="Type of Event" placeholder="e.g. Birthday, Corporate, etc.">
+            </div>
+            <div class="form-group">
+              <label for="private_space">Do you require a private space? *</label>
+              <select id="private_space" name="Do you require a private space?" required>
+                <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="explain_private">If so, please explain!</label>
+            <textarea id="explain_private" name="If so, please explain!" placeholder="e.g. Boardroom for meeting, Mezzanine for dining..."></textarea>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="decorating">Will you be decorating?</label>
+              <select id="decorating" name="Will you be decorating?">
+                <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="decorating_time">If so, how long do you require to decorate?</label>
+              <input type="text" id="decorating_time" name="If so, how long do you require to decorate?" placeholder="e.g. 1 hour">
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="form-group">
+              <label for="entertainment">Will your event have entertainment?</label>
+              <select id="entertainment" name="Will your event have entertainment?">
+                <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="open_bar">Will your event offer an open bar?</label>
+              <select id="open_bar" name="Will your event offer an open bar?">
+                <option value="">-- Select --</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="individual_billing">Will your event be individually billed?</label>
+            <select id="individual_billing" name="Will your event be individually billed?">
+              <option value="">-- Select --</option>
+              <option value="Yes">Yes</option>
+              <option value="No">No</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn-submit">Submit</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-main">KS on the Keys</span>
+            <span class="logo-sub" style="color:rgba(196,154,60,0.5)">Ottawa · Est. 1971</span>
+          </div>
+          <p>Over 50 years of bringing Ottawa South together around great food. From fresh daily ingredients to private events — there's truly something for everyone at KS.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Dining</h4>
+          <ul>
+            <li><a href="index.html#menu">Our Menu</a></li>
+            <li><a href="dailyspecials.html" target="_blank">Daily Specials</a></li>
+            <li><a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a></li>
+            <li><a href="brunch-buffet.html" target="_blank">Brunch Buffet</a></li>
+            <li><a href="https://order.tbdine.com/pickup/30078/menu" target="_blank">Order Online</a></li>
+            <li><a href="delivery.html" target="_blank">Delivery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul>
+            <li><a href="event-spaces.html">Event Spaces</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="corporate-events.html" target="_blank">Corporate Events</a></li>
+            <li><a href="nonprofits.html" target="_blank">Non-Profits</a></li>
+            <li><a href="upcoming-events.html" target="_blank">Upcoming Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Book Up to 10</a></li>
+            <li><a href="book-11plus.html">Book 11+ Guests</a></li>
+            <li><a href="book-large.html">Large Group Event</a></li>
+            <li><a href="mailto:RSVP@ksrestaurant.ca">RSVP@ksrestaurant.ca</a></li>
+            <li><a href="tel:+16135210498">(613) 521-0498</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 KS on the Keys Restaurant. 1029 Daze Street, Ottawa, Ontario. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

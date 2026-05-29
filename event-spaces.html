@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KS on the Keys | Ottawa's Favourite Restaurant Since 1971</title>
+  <meta name="description" content="KS on the Keys — Ottawa South's beloved restaurant since 1971. Enjoy pizza, Canadian comfort food, Middle Eastern dishes & more. Dine in, takeout, catering & private events at 1029 Daze St.">
+  <meta property="og:title" content="KS on the Keys | Ottawa Restaurant Since 1971">
+  <meta property="og:description" content="Ottawa South favourite since 1971. Pizza, Canadian comfort food, Chinese dishes & daily specials. Walk-ins welcome. Free parking.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* Specific overrides for Event Spaces page */
+    .subpage-hero { min-height: 400px; }
+    .space-section { padding: 80px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
+    .space-section:last-of-type { border-bottom: none; }
+    .space-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: center; }
+    .space-section:nth-child(even) .space-grid { direction: rtl; }
+    .space-section:nth-child(even) .space-grid > * { direction: ltr; }
+
+    .space-slideshow {
+      position: relative;
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      aspect-ratio: 4/3;
+      box-shadow: var(--shadow-lg);
+      background: #111;
+    }
+    .slide {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      opacity: 0;
+      transition: opacity 0.7s ease;
+    }
+    .slide.active { opacity: 1; }
+
+    .slide-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0,0,0,0.45);
+      color: #fff;
+      border: none;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      font-size: 1.1rem;
+      cursor: pointer;
+      z-index: 10;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+    }
+    .slide-btn:hover { background: rgba(204,0,0,0.75); }
+    .slide-btn.prev { left: 12px; }
+    .slide-btn.next { right: 12px; }
+
+    .slide-dots {
+      position: absolute;
+      bottom: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 6px;
+      z-index: 10;
+    }
+    .slide-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.5);
+      cursor: pointer;
+      border: none;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .slide-dot.active { background: #fff; transform: scale(1.3); }
+
+    .space-info { padding: 8px 0; }
+    .space-type {
+      font-family: var(--font-sans);
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--burgundy);
+      margin-bottom: 10px;
+    }
+    .space-title {
+      font-family: var(--font-serif);
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 700;
+      color: var(--burgundy-dark);
+      margin-bottom: 8px;
+      line-height: 1.1;
+    }
+    .space-capacity {
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      margin-bottom: 20px;
+    }
+    .space-divider {
+      width: 48px; height: 3px;
+      background: var(--gold);
+      border-radius: 2px;
+      margin-bottom: 20px;
+    }
+    .space-desc {
+      font-size: 1rem;
+      color: var(--text-mid);
+      line-height: 1.75;
+      margin-bottom: 24px;
+    }
+    .space-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 32px;
+    }
+    .space-tag {
+      background: rgba(204,0,0,0.08);
+      color: var(--burgundy);
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 5px 12px;
+      border-radius: 20px;
+      border: 1px solid rgba(204,0,0,0.2);
+    }
+
+    /* ——— Enquiry Banner ——— */
+    .enquiry-banner {
+      background: var(--burgundy);
+      padding: 64px 24px;
+      text-align: center;
+    }
+    .enquiry-banner h2 {
+      font-family: var(--font-serif);
+      font-size: clamp(1.6rem, 3vw, 2.4rem);
+      color: #fff;
+      margin-bottom: 12px;
+    }
+    .enquiry-banner p {
+      color: rgba(255,255,255,0.75);
+      font-size: 1rem;
+      margin-bottom: 32px;
+    }
+    .enquiry-buttons { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+
+    @media (max-width: 768px) {
+      .space-grid { grid-template-columns: 1fr; gap: 32px; }
+      .space-section:nth-child(even) .space-grid { direction: ltr; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOP BAR ══ -->
+  <div class="top-bar">
+    <div class="top-bar-inner container">
+      <span>📍 1029 Daze St, Ottawa, ON</span>
+      <span class="separator">|</span>
+      <a href="tel:+16135210498">📞 (613) 521-0498</a>
+      <span class="separator">|</span>
+      <a href="mailto:RSVP@ksrestaurant.ca">✉️ RSVP@ksrestaurant.ca</a>
+      <span class="separator">|</span>
+      <span>Open Tue–Sun &nbsp;·&nbsp; <strong>Walk-ins Welcome</strong></span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar subpage-nav" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo" aria-label="KS on the Keys Home">
+        <img src="images/logo.png" alt="KS on the Keys" class="logo-img">
+      </a>
+
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="index.html#about">About</a></li>
+        <li class="has-dropdown">
+          <span>Menu ▾</span>
+          <ul class="dropdown">
+            <li><a href="index.html#menu">Full Menu</a></li>
+            <li><a href="dailyspecials.html">Daily Specials</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="event-spaces.html">Event Spaces</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="corporate-events.html">Corporate Events</a></li>
+            <li><a href="nonprofits.html">Non-Profits</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Buffets ▾</span>
+          <ul class="dropdown">
+            <li><a href="breakfast-buffet.html">Breakfast Buffet</a></li>
+            <li><a href="brunch-buffet.html">Brunch Buffet</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Upcoming Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="big-band-ottawa.html">Big Band Ottawa</a></li>
+            <li><a href="ottawa-blackjacks.html">Ottawa Blackjacks</a></li>
+            <li><a href="grad-season.html">Grad Season 2026</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Reserve ▾</span>
+          <ul class="dropdown">
+            <li><a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Up to 10 Guests</a></li>
+            <li><a href="book-11plus.html">11+ Guests</a></li>
+            <li><a href="book-large.html">Large Group Event</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#faq">FAQ</a></li>
+                <li class="has-dropdown order-dropdown">
+          <a href="#" class="nav-cta" id="order-now-nav">Order Now ▾</a>
+          <ul class="dropdown dropdown-right" style="min-width: 200px;">
+            <li><a href="https://order.tbdine.com/pickup/30078/menu" target="_blank">Pickup</a></li>
+            <li><a href="https://www.ubereats.com/ca/store/ks-on-the-keys-restaurant/mw7AnpmYQ72yR1jO_5y1fw?srsltid=AfmBOop7SM1DoP4ko2bmMMWE7K1Ss4xnOpDgI-W4P5cbwxT4GvgxUe4j" target="_blank">Uber Eats</a></li>
+            <li><a href="https://www.skipthedishes.com/ks-on-the-keys-restaurant" target="_blank">Skip the Dishes</a></li>
+            <li><a href="https://www.doordash.com/store/ks-on-the-keys-ottawa-298448/1000/?srsltid=AfmBOooBdAlGQBW514EKMfhkyeXV0IZvEtwex9keIY4OxJLaS16fcusN" target="_blank">DoorDash</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="index.html#about">About</a>
+    <a href="index.html#menu">Menu</a>
+    <a href="dailyspecials.html">Daily Specials</a>
+    <a href="event-spaces.html">Event Spaces</a>
+    <a href="catering.html">Catering</a>
+    <a href="corporate-events.html">Corporate Events</a>
+    <a href="breakfast-buffet.html">Breakfast Buffet</a>
+    <a href="brunch-buffet.html">Brunch Buffet</a>
+    <a href="big-band-ottawa.html" class="mobile-link">Big Band Ottawa</a>
+    <a href="ottawa-blackjacks.html" class="mobile-link">Ottawa Blackjacks</a>
+    <a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Reserve a Table</a>
+    <a href="book-large.html" class="mobile-link">Book a Large Event</a>
+    <a href="index.html#faq">FAQ</a>
+        <div class="mobile-dropdown-container">
+      <span class="mobile-link" style="color: var(--gold-light) !important; font-weight: 700; margin-top: 12px; display: block;">🍕 Order Online ▾</span>
+      <div class="mobile-sublinks" style="padding-left: 20px; margin-bottom: 15px;">
+        <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Pickup</a>
+        <a href="https://www.ubereats.com/ca/store/ks-on-the-keys-restaurant/mw7AnpmYQ72yR1jO_5y1fw?srsltid=AfmBOop7SM1DoP4ko2bmMMWE7K1Ss4xnOpDgI-W4P5cbwxT4GvgxUe4j" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Uber Eats</a>
+        <a href="https://www.skipthedishes.com/ks-on-the-keys-restaurant" target="_blank" class="mobile-link" style="font-size: 0.9rem;">Skip the Dishes</a>
+        <a href="https://www.doordash.com/store/ks-on-the-keys-ottawa-298448/1000/?srsltid=AfmBOooBdAlGQBW514EKMfhkyeXV0IZvEtwex9keIY4OxJLaS16fcusN" target="_blank" class="mobile-link" style="font-size: 0.9rem;">DoorDash</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="subpage-hero" aria-label="Event Spaces">
+    <div class="subpage-hero-bg" style="background-image: url('images/events/grand-event-room-1.jpeg');"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content fade-in">
+      <p class="hero-eyebrow" style="justify-content:center;">Celebrate with Us</p>
+      <h1 class="hero-title" style="font-size:clamp(2rem, 5vw, 4rem);">Event <em>Spaces</em></h1>
+      <p class="hero-subtitle" style="margin: 0 auto;">Three beautifully appointed venues — from intimate boardroom gatherings to grand celebrations for 120+ guests.</p>
+    </div>
+  </section>
+
+  <!-- ══ GRAND EVENT ROOM ══ -->
+  <section class="space-section" id="grand-room">
+    <div class="container">
+      <div class="space-grid">
+        <!-- Slideshow -->
+        <div class="space-slideshow" id="slideshow-grand">
+          <div class="slide active lightbox-trigger" data-src="images/events/grand-event-room-1.jpeg" style="background-image: url('images/events/grand-event-room-1.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-2.jpeg" style="background-image: url('images/events/grand-event-room-2.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-3.jpeg" style="background-image: url('images/events/grand-event-room-3.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-4.jpeg" style="background-image: url('images/events/grand-event-room-4.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-5.jpeg" style="background-image: url('images/events/grand-event-room-5.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-6.jpeg" style="background-image: url('images/events/grand-event-room-6.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-7.jpeg" style="background-image: url('images/events/grand-event-room-7.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-8.jpeg" style="background-image: url('images/events/grand-event-room-8.jpeg');"></div>
+          <button class="slide-btn prev" onclick="changeSlide('slideshow-grand', -1)" aria-label="Previous photo">&#8592;</button>
+          <button class="slide-btn next" onclick="changeSlide('slideshow-grand', 1)" aria-label="Next photo">&#8594;</button>
+          <div class="slide-dots" id="dots-slideshow-grand">
+            <button class="slide-dot active" onclick="goToSlide('slideshow-grand', 0)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 1)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 2)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 3)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 4)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 5)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 6)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 7)"></button>
+          </div>
+        </div>
+        <!-- Info -->
+        <div class="space-info">
+          <p class="space-type">Private Venue</p>
+          <h2 class="space-title">Grand Event Room</h2>
+          <p class="space-capacity">Capacity: Up to 110 Guests</p>
+          <div class="space-divider"></div>
+          <p class="space-desc">Our premier event space offers total privacy and a sophisticated atmosphere. With a customizable floor plan, integrated audio-visual equipment, and high-speed Wi-Fi, it's the perfect canvas for weddings, corporate galas, and milestone celebrations.</p>
+          <div class="space-tags">
+            <span class="space-tag">AV Equipment</span>
+            <span class="space-tag">Private Bar</span>
+            <span class="space-tag">Wi-Fi</span>
+            <span class="space-tag">Climate Controlled</span>
+          </div>
+          <a href="corporate-events.html" target="_blank" class="btn btn-primary">Book the Grand Room</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MEZZANINE ══ -->
+  <section class="space-section" id="mezzanine">
+    <div class="container">
+      <div class="space-grid">
+        <!-- Slideshow -->
+        <div class="space-slideshow" id="slideshow-mezzanine">
+          <div class="slide active lightbox-trigger" data-src="images/events/mezzanine-1.jpeg" style="background-image: url('images/events/mezzanine-1.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-2.jpeg" style="background-image: url('images/events/mezzanine-2.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-3.jpeg" style="background-image: url('images/events/mezzanine-3.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-4.jpeg" style="background-image: url('images/events/mezzanine-4.jpeg');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-5.jpeg" style="background-image: url('images/events/mezzanine-5.jpeg');"></div>
+          <button class="slide-btn prev" onclick="changeSlide('slideshow-mezzanine', -1)" aria-label="Previous photo">&#8592;</button>
+          <button class="slide-btn next" onclick="changeSlide('slideshow-mezzanine', 1)" aria-label="Next photo">&#8594;</button>
+          <div class="slide-dots" id="dots-slideshow-mezzanine">
+            <button class="slide-dot active" onclick="goToSlide('slideshow-mezzanine', 0)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 1)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 2)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 3)"></button>
+            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 4)"></button>
+          </div>
+        </div>
+        <!-- Info -->
+        <div class="space-info">
+          <p class="space-type">Semi-Private</p>
+          <h2 class="space-title">Mezzanine Floor</h2>
+          <p class="space-capacity">Capacity: Up to 60 Guests</p>
+          <div class="space-divider"></div>
+          <p class="space-desc">Overlooking our vibrant main dining room, the Mezzanine offers an elevated semi-private experience. Accessible via elevator, it combines the energy of the restaurant with a dedicated space for your party. Ideal for brunch celebrations and social mixers.</p>
+          <div class="space-tags">
+            <span class="space-tag">Elevator Access</span>
+            <span class="space-tag">Great Views</span>
+            <span class="space-tag">Optional AV</span>
+          </div>
+          <a href="corporate-events.html" target="_blank" class="btn btn-primary">Book the Mezzanine</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ BOARD ROOM ══ -->
+  <section class="space-section" id="boardroom">
+    <div class="container">
+      <div class="space-grid">
+        <!-- Slideshow -->
+        <div class="space-slideshow" id="slideshow-boardroom">
+          <div class="slide active lightbox-trigger" data-src="images/events/boardroom-1.jpeg" style="background-image: url('images/events/boardroom-1.jpeg');"></div>
+          <button class="slide-btn prev" onclick="changeSlide('slideshow-boardroom', -1)" aria-label="Previous photo">&#8592;</button>
+          <button class="slide-btn next" onclick="changeSlide('slideshow-boardroom', 1)" aria-label="Next photo">&#8594;</button>
+          <div class="slide-dots" id="dots-slideshow-boardroom">
+            <button class="slide-dot active" onclick="goToSlide('slideshow-boardroom', 0)"></button>
+          </div>
+        </div>
+        <!-- Info -->
+        <div class="space-info">
+          <p class="space-type">Private Meeting Space</p>
+          <h2 class="space-title">Private Board Room</h2>
+          <p class="space-capacity">Capacity: Up to 20 Guests</p>
+          <div class="space-divider"></div>
+          <p class="space-desc">An intimate, professional setting for executive meetings, small workshops, or private family dinners. Equipped with a dedicated TV for presentations and a microphone system to ensure every voice is heard.</p>
+          <div class="space-tags">
+            <span class="space-tag">Presentation TV</span>
+            <span class="space-tag">Microphone</span>
+            <span class="space-tag">Quiet Atmosphere</span>
+            <span class="space-tag">Hourly Rental</span>
+          </div>
+          <a href="corporate-events.html" target="_blank" class="btn btn-primary">Book the Board Room</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ENQUIRY ══ -->
+  <section class="enquiry-banner">
+    <div class="container">
+      <h2>Ready to Plan Your Event?</h2>
+      <p>Contact our event coordination team today to discuss menus, pricing, and availability.</p>
+      <div class="enquiry-buttons">
+        <a href="mailto:RSVP@ksrestaurant.ca" class="btn btn-primary btn-lg" style="background:#fff; color:var(--burgundy);">Email Us Now</a>
+        <a href="tel:+16135210498" class="btn btn-outline btn-lg">Call (613) 521-0498</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-main">KS on the Keys</span>
+            <span class="logo-sub" style="color:rgba(196,154,60,0.5)">Ottawa · Est. 1971</span>
+          </div>
+          <p>Over 50 years of bringing Ottawa South together around great food. From fresh daily ingredients to private events — there's truly something for everyone at KS.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Dining</h4>
+          <ul>
+            <li><a href="index.html#menu">Our Menu</a></li>
+            <li><a href="dailyspecials.html" target="_blank">Daily Specials</a></li>
+            <li><a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a></li>
+            <li><a href="brunch-buffet.html" target="_blank">Brunch Buffet</a></li>
+            <li><a href="https://order.tbdine.com/pickup/30078/menu" target="_blank">Order Online</a></li>
+            <li><a href="delivery.html" target="_blank">Delivery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Events</h4>
+          <ul>
+            <li><a href="event-spaces.html">Event Spaces</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="corporate-events.html" target="_blank">Corporate Events</a></li>
+            <li><a href="nonprofits.html" target="_blank">Non-Profits</a></li>
+            <li><a href="upcoming-events.html" target="_blank">Upcoming Events</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Book Up to 10</a></li>
+            <li><a href="book-11plus.html">Book 11+ Guests</a></li>
+            <li><a href="book-large.html">Large Group Event</a></li>
+            <li><a href="mailto:RSVP@ksrestaurant.ca">RSVP@ksrestaurant.ca</a></li>
+            <li><a href="tel:+16135210498">(613) 521-0498</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2025 KS on the Keys Restaurant. 1029 Daze Street, Ottawa, Ontario. All rights reserved.</p>
+        <div class="social-links" aria-label="Social media links">
+          <a href="#" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
+          <a href="#" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+  <script>
+    function changeSlide(slideshowId, n) {
+      const slideshow = document.getElementById(slideshowId);
+      const slides = slideshow.querySelectorAll('.slide');
+      const dots = slideshow.querySelectorAll('.slide-dot');
+      let activeIdx = Array.from(slides).findIndex(s => s.classList.contains('active'));
+      
+      slides[activeIdx].classList.remove('active');
+      dots[activeIdx].classList.remove('active');
+      
+      activeIdx = (activeIdx + n + slides.length) % slides.length;
+      
+      slides[activeIdx].classList.add('active');
+      dots[activeIdx].classList.add('active');
+    }
+
+    function goToSlide(slideshowId, n) {
+      const slideshow = document.getElementById(slideshowId);
+      const slides = slideshow.querySelectorAll('.slide');
+      const dots = slideshow.querySelectorAll('.slide-dot');
+      
+      slides.forEach(s => s.classList.remove('active'));
+      dots.forEach(d => d.classList.remove('active'));
+      
+      slides[n].classList.add('active');
+      dots[n].classList.add('active');
+    }
+  </script>
+</body>
+</html>

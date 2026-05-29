@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Grad Season Buffet Ottawa 2026 — Private Grad Dinners | KS on the Keys</title>
+  <meta name="description" content="Celebrate your graduation at KS on the Keys in South Keys Ottawa. Our Grad Special buffet starts at $28 per person for groups of 20 or more. Private event spaces available for 20 to 110 guests. Reserve now — spots fill fast in June.">
+  <link rel="stylesheet" href="css/styles.css">
+  <style>
+    /* 
+       GRAD SEASON - BULLETPROOF THEME REWORK
+       Ensuring 100% visibility and consistent dark theme
+    */
+    body {
+      background: #1a1a1a;
+      color: #F5F0E8;
+      margin: 0;
+      padding: 0;
+    }
+    
+    :root {
+      --grad-red: #C0392B;
+      --grad-gold: #C49A3C;
+      --grad-cream: #F5F0E8;
+    }
+
+    /* Override any default white backgrounds */
+    .subpage-content {
+      background: #1a1a1a !important;
+      color: #F5F0E8 !important;
+      padding: 80px 24px;
+    }
+
+    /* Force visibility of all elements (remove fade-in dependencies) */
+    .fade-in {
+      opacity: 1 !important;
+      transform: none !important;
+      visibility: visible !important;
+    }
+
+    /* Hero Section */
+    .subpage-hero {
+      position: relative;
+      background: #6B1C2B; /* Brand Burgundy fallback */
+      padding: 180px 24px 100px;
+      text-align: center;
+      overflow: hidden;
+    }
+    
+    .subpage-hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('images/events/grand-event-room-1.jpeg');
+      background-size: cover;
+      background-position: center;
+      opacity: 0.35;
+      z-index: 0;
+    }
+    
+    .subpage-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, #1a1a1a 0%, rgba(26,10,15,0.8) 100%);
+      z-index: 1;
+    }
+    
+    .subpage-hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      color: #fff;
+      margin-bottom: 16px;
+      line-height: 1.1;
+    }
+    
+    .hero-title em {
+      color: var(--grad-gold);
+      font-style: italic;
+    }
+    
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.5rem);
+      opacity: 0.9;
+      font-weight: 300;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* Intro Section */
+    .intro-content {
+      max-width: 800px;
+      margin: 0 auto;
+      text-align: center;
+      font-size: 1.2rem;
+      line-height: 1.8;
+    }
+
+    /* Grad Special Panel */
+    .grad-special-panel {
+      max-width: 1000px;
+      margin: 40px auto;
+      background: rgba(255, 255, 255, 0.05);
+      border-left: 6px solid var(--grad-red);
+      padding: 60px;
+      border-radius: 0 12px 12px 0;
+      text-align: left;
+    }
+    
+    .grad-special-panel h2 {
+      color: var(--grad-gold);
+      font-family: 'Playfair Display', serif;
+      font-size: 2.8rem;
+      margin-bottom: 12px;
+    }
+    
+    .panel-subheading {
+      font-size: 1.1rem;
+      color: var(--grad-gold);
+      opacity: 0.8;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+    }
+    
+    .menu-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 32px;
+    }
+    
+    .menu-col ul {
+      list-style: none;
+      padding: 0;
+    }
+    
+    .menu-col ul li {
+      margin-bottom: 14px;
+      position: relative;
+      padding-left: 24px;
+      font-size: 1.1rem;
+    }
+    
+    .menu-col ul li::before {
+      content: '•';
+      position: absolute;
+      left: 0;
+      color: var(--grad-gold);
+    }
+    
+    .dietary-note {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: rgba(245, 240, 232, 0.6);
+      margin-bottom: 40px;
+    }
+
+    /* Buttons */
+    .btn-grad-red {
+      display: inline-block;
+      background: var(--grad-red);
+      color: #fff;
+      padding: 18px 36px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+      border: none;
+    }
+    
+    .btn-grad-red:hover {
+      background: #a93226;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(192, 57, 43, 0.4);
+    }
+    
+    .btn-grad-outline {
+      display: inline-block;
+      border: 2px solid #fff;
+      color: #fff;
+      padding: 16px 34px;
+      border-radius: 6px;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+    
+    .btn-grad-outline:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Why KS Grid */
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-top: 60px;
+    }
+    
+    .why-item {
+      padding: 20px;
+      text-align: center;
+    }
+    
+    .why-icon {
+      font-size: 3rem;
+      margin-bottom: 20px;
+      display: block;
+    }
+    
+    .why-item h3 {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+      color: var(--grad-gold);
+    }
+    
+    .why-item p {
+      font-size: 1rem;
+      opacity: 0.8;
+      line-height: 1.6;
+    }
+
+    /* FAQ List */
+    .faq-container {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+    
+    .faq-item {
+      margin-bottom: 40px;
+      border-bottom: 1px solid rgba(255,255,255,0.05);
+      padding-bottom: 20px;
+    }
+    
+    .faq-item:last-child { border-bottom: none; }
+    
+    .faq-q {
+      font-weight: 700;
+      font-size: 1.2rem;
+      color: var(--grad-gold);
+      margin-bottom: 10px;
+    }
+    
+    .faq-a {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      opacity: 0.9;
+    }
+
+    /* Closing CTA */
+    .closing-cta {
+      padding: 100px 24px;
+      background: #000;
+      text-align: center;
+    }
+    
+    .closing-cta h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      color: var(--grad-gold);
+      margin-bottom: 15px;
+    }
+    
+    .cta-sub {
+      font-size: 1.3rem;
+      margin-bottom: 40px;
+      opacity: 0.8;
+    }
+
+    .cta-row {
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      margin-bottom: 40px;
+      flex-wrap: wrap;
+    }
+
+    /* Footer Overrides */
+    .footer {
+      background: #0a0a0a !important;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    @media (max-width: 992px) {
+      .why-grid { grid-template-columns: 1fr 1fr; }
+    }
+    
+    @media (max-width: 768px) {
+      .menu-grid, .why-grid { grid-template-columns: 1fr; }
+      .grad-special-panel { padding: 40px 20px; }
+      .hero-title { font-size: 2.8rem; }
+      .closing-cta h2 { font-size: 2.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOP BAR ══ -->
+  <div class="top-bar">
+    <div class="top-bar-inner container">
+      <span>📍 1029 Daze St, Ottawa, ON</span>
+      <span class="separator">|</span>
+      <a href="tel:+16135210498">📞 (613) 521-0498</a>
+      <span class="separator">|</span>
+      <a href="mailto:RSVP@ksrestaurant.ca">✉️ RSVP@ksrestaurant.ca</a>
+      <span class="separator">|</span>
+      <span>Open Tue–Sun &nbsp;·&nbsp; <strong>Walk-ins Welcome</strong></span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar subpage-nav" id="navbar">
+    <div class="navbar-inner">
+      <a href="index.html" class="logo" aria-label="KS on the Keys Home">
+        <img src="images/logo.png" alt="KS on the Keys" class="logo-img">
+      </a>
+
+      <ul class="nav-links" role="navigation" aria-label="Main navigation">
+        <li><a href="index.html#about">About</a></li>
+        <li class="has-dropdown">
+          <span>Menu ▾</span>
+          <ul class="dropdown">
+            <li><a href="index.html#menu">Full Menu</a></li>
+            <li><a href="dailyspecials.html" target="_blank">Daily Specials</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="event-spaces.html">Event Spaces</a></li>
+            <li><a href="catering.html">Catering</a></li>
+            <li><a href="corporate-events.html" target="_blank">Corporate Events</a></li>
+            <li><a href="nonprofits.html" target="_blank">Non-Profits</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Buffets ▾</span>
+          <ul class="dropdown">
+            <li><a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a></li>
+            <li><a href="brunch-buffet.html" target="_blank">Brunch Buffet</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Upcoming Events ▾</span>
+          <ul class="dropdown">
+            <li><a href="big-band-ottawa.html">Big Band Ottawa</a></li>
+            <li><a href="ottawa-blackjacks.html">Ottawa Blackjacks</a></li>
+            <li><a href="grad-season.html">Grad Season 2026</a></li>
+          </ul>
+        </li>
+        <li class="has-dropdown">
+          <span>Reserve ▾</span>
+          <ul class="dropdown">
+            <li><a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Up to 10 Guests</a></li>
+            <li><a href="book-11plus.html">11+ Guests</a></li>
+            <li><a href="book-large.html">Large Group Event</a></li>
+          </ul>
+        </li>
+        <li><a href="index.html#faq">FAQ</a></li>
+                <li class="has-dropdown order-dropdown">
+          <a href="#" class="nav-cta" id="order-now-nav">Order Now ▾</a>
+          <ul class="dropdown dropdown-right" style="min-width: 200px;">
+            <li><a href="https://order.tbdine.com/pickup/30078/menu" target="_blank">Pickup</a></li>
+            <li><a href="https://www.ubereats.com/ca/store/ks-on-the-keys-restaurant/mw7AnpmYQ72yR1jO_5y1fw?srsltid=AfmBOop7SM1DoP4ko2bmMMWE7K1Ss4xnOpDgI-W4P5cbwxT4GvgxUe4j" target="_blank">Uber Eats</a></li>
+            <li><a href="https://www.skipthedishes.com/ks-on-the-keys-restaurant" target="_blank">Skip the Dishes</a></li>
+            <li><a href="https://www.doordash.com/store/ks-on-the-keys-ottawa-298448/1000/?srsltid=AfmBOooBdAlGQBW514EKMfhkyeXV0IZvEtwex9keIY4OxJLaS16fcusN" target="_blank">DoorDash</a></li>
+          </ul>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
+    <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
+    <a href="index.html#about" class="mobile-link">About</a>
+    <a href="index.html#menu" class="mobile-link">Menu</a>
+    <a href="dailyspecials.html" target="_blank">Daily Specials</a>
+    <a href="event-spaces.html" class="mobile-link">Event Spaces</a>
+    <a href="catering.html" class="mobile-link">Catering</a>
+    <a href="corporate-events.html" target="_blank">Corporate Events</a>
+    <a href="breakfast-buffet.html" target="_blank">Breakfast Buffet</a>
+    <a href="brunch-buffet.html" target="_blank">Brunch Buffet</a>
+    <a href="big-band-ottawa.html" class="mobile-link">Big Band Ottawa</a>
+    <a href="ottawa-blackjacks.html" class="mobile-link">Ottawa Blackjacks</a>
+    <a href="grad-season.html" class="mobile-link">Grad Season 2026</a>
+    <a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank">Reserve a Table</a>
+    <a href="book-large.html" class="mobile-link">Book a Large Event</a>
+    <a href="index.html#faq" class="mobile-link">FAQ</a>
+    <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" style="color: var(--grad-gold) !important; font-weight: 700; margin-top: 12px;">🍕 Order Online Now</a>
+  </nav>
+
+  <!-- 1. HERO SECTION -->
+  <section class="subpage-hero">
+    <div class="subpage-hero-bg"></div>
+    <div class="subpage-hero-overlay"></div>
+    <div class="subpage-hero-content">
+      <h1 class="hero-title">Celebrate Your Grad at <em>KS on the Keys</em></h1>
+      <p class="hero-subtitle">Private dining, unforgettable memories, and food worth celebrating — since 1971</p>
+    </div>
+  </section>
+
+  <!-- 2. INTRO SECTION -->
+  <section class="subpage-content">
+    <div class="container">
+      <div class="intro-content">
+        <p>Graduation is one of life's biggest milestones. At KS on the Keys, we have been helping Ottawa families celebrate the moments that matter most for over 54 years. Whether you are planning an intimate dinner for close family or a full celebration for friends and loved ones, our team is here to make your grad night truly unforgettable. From our exclusive Grad Special buffet to our private event spaces, everything you need is right here in South Keys Ottawa.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. GRAD SPECIAL SECTION -->
+  <section class="subpage-content" style="padding-top: 0;">
+    <div class="container">
+      <div class="grad-special-panel">
+        <h2>The KS Grad Special Buffet</h2>
+        <p class="panel-subheading">$28 per person · Minimum 20 guests · Available mid-May through end of June</p>
+        
+        <div class="menu-grid">
+          <div class="menu-col">
+            <ul>
+              <li>Penne in a Cream Sauce</li>
+              <li>Assorted Sandwich Wraps</li>
+              <li>BBQ Meatballs</li>
+              <li>Spring Rolls with Plum Sauce (Gluten Free, Vegan)</li>
+            </ul>
+          </div>
+          <div class="menu-col">
+            <ul>
+              <li>Thai Chicken Bites</li>
+              <li>Assorted Pizza</li>
+              <li>Assorted Cookies and Brownies (Vegetarian)</li>
+              <li>Assorted Soda and Citrus Infused Water</li>
+            </ul>
+          </div>
+        </div>
+        
+        <p class="dietary-note">Dietary options available. Gluten free and vegan items marked above. Contact us to discuss any additional dietary requirements.</p>
+        
+        <a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank" class="btn-grad-red">Reserve Your Grad Celebration</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. WALK-IN GRAD DINING SECTION -->
+  <section class="subpage-content" style="background: #222 !important; text-align: center;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 24px; color: var(--grad-gold);">Dining In for Grad Season</h2>
+      <p style="max-width: 800px; margin: 0 auto 32px; font-size: 1.15rem;">Not planning a private event? You are still welcome to join us for dinner any evening during grad season. Our full menu and weekend brunch buffet are available throughout May and June — perfect for a spontaneous grad celebration with family after the ceremony. Walk-ins welcome, reservations recommended.</p>
+      <a href="index.html#menu" class="btn-grad-red">View Our Full Menu</a>
+    </div>
+  </section>
+
+  <!-- 5. PRIVATE EVENT SPACES SECTION -->
+  <section class="subpage-content" style="text-align: center;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; margin-bottom: 24px; color: var(--grad-gold);">Private Event Spaces for Your Grad Celebration</h2>
+      <p style="max-width: 800px; margin: 0 auto 32px; font-size: 1.15rem;">Looking to host a fully private grad celebration? KS on the Keys offers three dedicated event spaces accommodating groups of all sizes — from intimate family dinners to large grad parties. Our team works with you to customize every detail, from the menu to the setup, so your grad night is exactly what you envisioned.</p>
+      <a href="event-spaces.html" class="btn-grad-red">View Our Event Spaces</a>
+    </div>
+  </section>
+
+  <!-- 6. WHY KS SECTION -->
+  <section class="subpage-content" style="background: #111 !important;">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; text-align: center; margin-bottom: 40px; color: var(--grad-gold);">Why Ottawa Grads Choose KS on the Keys</h2>
+      <div class="why-grid">
+        <div class="why-item">
+          <span class="why-icon">📍</span>
+          <h3>54 Years of Ottawa Hospitality</h3>
+          <p>A legacy restaurant trusted by Ottawa families since 1971.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🍽️</span>
+          <h3>Fully Halal Kitchen</h3>
+          <p>Our entire menu is fully halal — inclusive dining for every guest at the table.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🕒</span>
+          <h3>Flexible for Your Schedule</h3>
+          <p>Available evenings and weekends throughout grad season. We work around your timeline.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">🚗</span>
+          <h3>Free Parking On Site</h3>
+          <p>Plenty of free parking — no stress on your big night.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">👥</span>
+          <h3>Groups of All Sizes</h3>
+          <p>From 20 to 110 guests — we have a space and a menu for your group.</p>
+        </div>
+        <div class="why-item">
+          <span class="why-icon">⭐</span>
+          <h3>Customizable Menus</h3>
+          <p>Beyond the Grad Special, our full catering menu is available for any group size or preference.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. FAQ SECTION -->
+  <section class="subpage-content">
+    <div class="container">
+      <h2 style="font-family: 'Playfair Display', serif; font-size: 2.8rem; text-align: center; margin-bottom: 60px; color: var(--grad-gold);">Frequently Asked Questions</h2>
+      <div class="faq-container">
+        <div class="faq-item">
+          <p class="faq-q">Q: Where is KS on the Keys located?</p>
+          <p class="faq-a">A: We are located at 1029 Daze Street, South Keys Ottawa — with free parking on site. Easy to find, easy to get to.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: What is the Grad Special buffet?</p>
+          <p class="faq-a">A: The KS Grad Special is an all-inclusive buffet at $28 per person for groups of 20 or more. It includes penne in cream sauce, assorted sandwich wraps, BBQ meatballs, spring rolls, Thai chicken bites, assorted pizza, cookies, brownies, assorted soda and citrus infused water.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: When is the Grad Special available?</p>
+          <p class="faq-a">A: The Grad Special buffet is available from mid-May through the end of June 2026 — right through Ottawa's busiest graduation season.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: Do you have private event spaces for grad parties?</p>
+          <p class="faq-a">A: Yes — we have three private event spaces accommodating groups from 20 to 110 guests. Visit our event spaces page for full details or call us at 613-521-0498.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: Is KS on the Keys halal?</p>
+          <p class="faq-a">A: Yes — KS on the Keys is a fully halal restaurant. Every item on our menu including the Grad Special buffet is halal certified.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: Can I walk in during grad season without a reservation?</p>
+          <p class="faq-a">A: Walk-ins are always welcome. However reservations are strongly recommended during grad season as we fill up quickly in June.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: How do I book a private grad event?</p>
+          <p class="faq-a">A: Contact us at RSVP@ksrestaurant.ca or call 613-521-0498 to discuss availability, event space options, and menu customization. You can also reserve online at tbdine.com.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: Is there parking at KS on the Keys?</p>
+          <p class="faq-a">A: Yes — free parking is available on site for all guests.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: Can I customize the menu beyond the Grad Special?</p>
+          <p class="faq-a">A: Absolutely. Our full event and catering menu is available for any group. Contact us to discuss options.</p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Q: What areas of Ottawa do you serve?</p>
+          <p class="faq-a">A: We are located in South Keys Ottawa near Bank Street and Hunt Club Road — convenient for guests coming from all across Ottawa and the surrounding area.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. CLOSING CTA SECTION -->
+  <section class="closing-cta">
+    <div class="container">
+      <h2>Book Your Grad Celebration Today</h2>
+      <p class="cta-sub">Spots fill up fast in June — don't leave it too late.</p>
+      <div class="cta-row">
+        <a href="https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us" target="_blank" class="btn-grad-red">Reserve Online</a>
+        <a href="tel:+16135210498" class="btn-grad-outline">Call Us</a>
+      </div>
+      <div class="cta-footer-note">
+        KS on the Keys · 1029 Daze Street, South Keys Ottawa · 613-521-0498 · RSVP@ksrestaurant.ca · ksonthekeys.com · Fully Halal · Free Parking
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="logo">
+            <span class="logo-main" style="color: #fff;">KS on the Keys</span>
+          </div>
+          <p>Over 50 years of bringing Ottawa South together around great food. From fresh daily ingredients to private events — there's truly something for everyone at KS.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Reserve</h4>
+          <ul>
+            <li><a href="mailto:RSVP@ksrestaurant.ca">RSVP@ksrestaurant.ca</a></li>
+            <li><a href="tel:+16135210498">(613) 521-0498</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 KS on the Keys Restaurant. 1029 Daze Street, Ottawa, Ontario. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

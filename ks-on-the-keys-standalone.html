@@ -1,0 +1,711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KS on the Keys | Ottawa's Favourite Restaurant Since 1971</title>
+  <meta name="description" content="KS on the Keys — Ottawa South's beloved restaurant since 1971. Enjoy pizza, Canadian comfort food, Middle Eastern dishes & more. Dine in, takeout, catering & private events at 1029 Daze St.">
+  <style>
+/* ================================================
+   KS ON THE KEYS — Design System
+   Brand: Deep Burgundy #6B1C2B, Gold #C49A3C, Cream #F5F0E8
+   ================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap');
+
+:root {
+  --burgundy:       #CC0000;
+  --burgundy-dark:  #A30000;
+  --burgundy-light: #E60000;
+  --gold:           #C49A3C;
+  --gold-light:     #D4AF5A;
+  --gold-pale:      #F0E0A8;
+  --cream:          #F5F0E8;
+  --cream-dark:     #EDE5D5;
+  --charcoal:       #1A1A1A;
+  --text-dark:      #2C2C2C;
+  --text-mid:       #555555;
+  --text-light:     #888888;
+  --white:          #FFFFFF;
+
+  --font-serif:     'Playfair Display', Georgia, serif;
+  --font-elegant:   'Cormorant Garamond', Georgia, serif;
+  --font-sans:      'Inter', system-ui, sans-serif;
+
+  --radius-sm:      6px;
+  --radius-md:      12px;
+  --radius-lg:      20px;
+  --radius-xl:      32px;
+
+  --shadow-sm:      0 2px 8px rgba(0,0,0,0.08);
+  --shadow-md:      0 4px 24px rgba(0,0,0,0.12);
+  --shadow-lg:      0 8px 48px rgba(0,0,0,0.18);
+  --shadow-gold:    0 4px 24px rgba(196,154,60,0.25);
+
+  --transition:     all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: var(--font-sans);
+  color: var(--text-dark);
+  background: var(--cream);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+img { max-width: 100%; height: auto; display: block; }
+a { text-decoration: none; color: inherit; transition: var(--transition); }
+ul { list-style: none; }
+button { cursor: pointer; border: none; background: none; font-family: inherit; }
+
+.top-bar {
+  background: #A30000;
+  color: rgba(255,255,255,0.9);
+  min-height: 36px;
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 8px 0;
+  text-align: center;
+}
+.top-bar a { color: rgba(255,255,255,0.9); }
+.top-bar a:hover { color: var(--white); }
+.top-bar .top-bar-inner {
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.top-bar .separator { opacity: 0.4; }
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: transparent;
+  border-bottom: 1px solid transparent;
+  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+}
+.navbar.scrolled {
+  background: rgba(163, 0, 0, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
+  box-shadow: 0 2px 16px rgba(0,0,0,0.25);
+}
+.navbar-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 80px;
+}
+.logo-main {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.02em;
+}
+.logo-sub {
+  font-family: var(--font-sans);
+  font-size: 0.62rem;
+  font-weight: 400;
+  color: rgba(255,255,255,0.7);
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+.nav-links > li { position: relative; }
+.nav-links > li > a, .nav-links > li > span {
+  color: rgba(255,255,255,0.85);
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border-radius: var(--radius-sm);
+  display: block;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.nav-links > li > a:hover,
+.nav-links > li > span:hover { color: var(--gold-light); }
+
+.has-dropdown { position: relative; }
+.dropdown {
+  display: none;
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--burgundy-dark);
+  border: 1px solid rgba(196,154,60,0.25);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  padding: 8px;
+  min-width: 200px;
+  white-space: nowrap;
+  z-index: 100;
+}
+.has-dropdown:hover .dropdown { display: block; }
+.dropdown a {
+  display: block;
+  color: rgba(255,255,255,0.8);
+  font-size: 0.82rem;
+  padding: 9px 16px;
+  border-radius: var(--radius-sm);
+}
+.dropdown a:hover { color: var(--gold-light); background: rgba(196,154,60,0.1); }
+
+.nav-cta {
+  background: var(--burgundy) !important;
+  color: var(--white) !important;
+  border-radius: var(--radius-sm) !important;
+  font-weight: 600 !important;
+  padding: 10px 20px !important;
+  letter-spacing: 0.04em !important;
+  transition: all 0.3s ease;
+}
+.nav-cta:hover { background: var(--burgundy-dark) !important; color: var(--white) !important; transform: translateY(-2px); }
+
+.hamburger { display: none; flex-direction: column; gap: 5px; padding: 8px; }
+.hamburger span { display: block; width: 24px; height: 2px; background: var(--gold); border-radius: 2px; transition: var(--transition); }
+
+.hero {
+  position: relative;
+  height: calc(100vh + 116px);
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: #0a0508;
+  margin-top: calc(-36px - 80px);
+  padding-top: calc(36px + 80px);
+}
+.hero-bg { position: absolute; inset: 0; overflow: hidden; }
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(to bottom, rgba(10,5,8,0.6) 0%, rgba(10,5,8,0) 18%),
+    linear-gradient(to right, rgba(10,5,8,0.88) 0%, rgba(10,5,8,0.52) 55%, rgba(10,5,8,0.08) 100%);
+}
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 60px;
+  width: 100%;
+}
+.hero-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.2rem, 5vw, 4.6rem);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.06;
+  max-width: 680px;
+  margin-bottom: 16px;
+}
+.hero-title em { color: var(--gold-light); font-style: italic; }
+.hero-subtitle {
+  font-size: 1rem;
+  color: rgba(255,255,255,0.72);
+  max-width: 460px;
+  line-height: 1.65;
+  margin-bottom: 28px;
+  font-weight: 300;
+}
+.hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.hero-hours {
+  display: flex;
+  gap: 28px;
+  margin-top: 36px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  flex-wrap: wrap;
+}
+.hero-hours-item .day {
+  font-size: 0.7rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 4px;
+}
+.hero-hours-item .time { font-size: 0.88rem; color: rgba(255,255,255,0.75); }
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px 28px;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition: var(--transition);
+  white-space: nowrap;
+}
+.btn-primary { background: var(--burgundy); color: var(--white); }
+.btn-primary:hover { background: var(--burgundy-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-outline { background: transparent; color: var(--white); border: 1.5px solid rgba(255,255,255,0.5); }
+.btn-outline:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-2px); }
+.btn-dark { background: var(--burgundy); color: var(--white); }
+.btn-dark:hover { background: var(--burgundy-dark); transform: translateY(-2px); box-shadow: var(--shadow-md); }
+.btn-sm { padding: 10px 20px; font-size: 0.78rem; }
+.btn-lg { padding: 18px 36px; font-size: 0.95rem; }
+
+.section { padding: 96px 0; }
+.container { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+.section-label {
+  font-family: var(--font-sans);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.section-label::before {
+  content: '';
+  display: block;
+  width: 28px;
+  height: 1.5px;
+  background: var(--gold);
+}
+.section-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  color: var(--burgundy-dark);
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+.section-title em { color: var(--gold); font-style: italic; }
+.section-header { margin-bottom: 56px; }
+.section-header.centered { text-align: center; }
+.section-header.centered .section-label { justify-content: center; }
+
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.about-image-wrap { position: relative; }
+.about-image-wrap img { width: 100%; height: 520px; object-fit: cover; border-radius: var(--radius-lg); box-shadow: var(--shadow-lg); }
+.about-badge {
+  position: absolute;
+  bottom: -24px;
+  right: -24px;
+  background: var(--burgundy);
+  color: var(--white);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  box-shadow: var(--shadow-md);
+  border: 4px solid var(--white);
+}
+.about-badge .years { font-family: var(--font-serif); font-size: 2rem; font-weight: 700; color: var(--gold); line-height: 1; }
+.about-badge .since { font-size: 0.62rem; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.8; }
+.about-text p { font-size: 1.02rem; color: var(--text-mid); line-height: 1.8; margin-bottom: 20px; }
+.about-highlights { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 36px; }
+.highlight-item { display: flex; align-items: flex-start; gap: 12px; }
+.highlight-icon { width: 36px; height: 36px; background: var(--cream); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 1rem; }
+.highlight-text strong { display: block; font-size: 0.85rem; font-weight: 600; color: var(--burgundy); margin-bottom: 2px; }
+.highlight-text span { font-size: 0.78rem; color: var(--text-light); }
+
+.menu-section { background: var(--cream); }
+.menu-tabs { display: flex; gap: 8px; margin-bottom: 40px; flex-wrap: wrap; justify-content: center; }
+.menu-tab {
+  padding: 9px 20px;
+  border-radius: 40px;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  border: 1.5px solid rgba(107,28,43,0.2);
+  color: var(--text-mid);
+  transition: var(--transition);
+  background: var(--white);
+}
+.menu-tab:hover, .menu-tab.active { background: var(--burgundy); color: var(--white); border-color: var(--burgundy); }
+.menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 20px; }
+.menu-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 22px 24px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  border: 1px solid rgba(0,0,0,0.05);
+  transition: var(--transition);
+}
+.menu-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(196,154,60,0.3); }
+.menu-card-name { font-family: var(--font-serif); font-size: 1.02rem; font-weight: 600; color: var(--burgundy-dark); margin-bottom: 4px; }
+.menu-card-desc { font-size: 0.8rem; color: var(--text-light); line-height: 1.5; }
+.menu-card-badge { font-size: 0.65rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 3px 8px; border-radius: 20px; margin-top: 8px; display: inline-block; }
+.badge-vegan { background: #E8F5E9; color: #2E7D32; }
+.badge-halal { background: #FFF8E1; color: #F57F17; }
+.badge-popular { background: #FCE4EC; color: #C62828; }
+.menu-card-price { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 700; color: var(--burgundy); white-space: nowrap; }
+.menu-panel { display: none; }
+.menu-panel.active { display: block; }
+
+.cta-banner { background: var(--burgundy-dark); padding: 72px 0; position: relative; overflow: hidden; text-align: center; }
+.cta-banner-eyebrow { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.22em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.cta-banner h2 { font-family: var(--font-serif); font-size: clamp(1.8rem, 3.5vw, 2.8rem); font-weight: 700; color: var(--white); margin-bottom: 12px; }
+.cta-banner p { color: rgba(255,255,255,0.65); font-size: 1rem; max-width: 480px; margin: 0 auto 36px; line-height: 1.7; }
+.cta-buttons { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+
+.gallery-section { background: var(--charcoal); padding: 80px 0; }
+.gallery-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-bottom: 12px; }
+.gallery-item { overflow: hidden; border-radius: var(--radius-sm); position: relative; cursor: pointer; aspect-ratio: 1 / 1; }
+.gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+.gallery-item:hover img { transform: scale(1.08); }
+.gallery-item-overlay { position: absolute; inset: 0; background: rgba(107,28,43,0); transition: var(--transition); pointer-events: none; }
+.gallery-item:hover .gallery-item-overlay { background: rgba(107,28,43,0.3); }
+
+.info-section { background: var(--burgundy-dark); padding: 80px 0; }
+.info-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; }
+.info-title { font-family: var(--font-serif); font-size: 1.1rem; font-weight: 600; color: var(--gold); margin-bottom: 20px; text-transform: uppercase; letter-spacing: 0.1em; }
+.hours-list { display: flex; flex-direction: column; gap: 10px; }
+.hours-row { display: flex; justify-content: space-between; align-items: center; padding: 8px 0; border-bottom: 1px solid rgba(255,255,255,0.08); }
+.hours-day { font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+.hours-time { font-size: 0.85rem; color: var(--white); font-weight: 500; }
+.hours-closed { color: rgba(255,255,255,0.35); }
+.contact-list { display: flex; flex-direction: column; gap: 16px; }
+.contact-item { display: flex; gap: 14px; align-items: flex-start; }
+.contact-item-text .label { font-size: 0.7rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gold); margin-bottom: 2px; }
+.contact-item-text .value { font-size: 0.9rem; color: rgba(255,255,255,0.8); }
+
+.faq-section { background: var(--white); }
+.faq-grid { display: grid; grid-template-columns: 1fr 1.4fr; gap: 80px; align-items: start; }
+.faq-list { display: flex; flex-direction: column; gap: 12px; }
+.faq-item { border: 1px solid rgba(107,28,43,0.12); border-radius: var(--radius-md); overflow: hidden; }
+.faq-question { display: flex; justify-content: space-between; align-items: center; padding: 18px 22px; cursor: pointer; font-size: 0.92rem; font-weight: 500; color: var(--burgundy-dark); transition: var(--transition); }
+.faq-question:hover { background: var(--cream); }
+.faq-chevron { width: 20px; height: 20px; border: 2px solid var(--burgundy); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 0.8rem; color: var(--burgundy); }
+.faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--burgundy); color: var(--white); }
+.faq-answer { display: none; padding: 0 22px 18px; font-size: 0.88rem; color: var(--text-mid); line-height: 1.7; }
+.faq-item.open .faq-answer { display: block; }
+
+.footer { background: var(--charcoal); padding: 64px 0 32px; }
+.footer-grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 60px; }
+.footer-brand p { font-size: 0.85rem; color: rgba(255,255,255,0.45); line-height: 1.7; margin-top: 12px; max-width: 260px; }
+.footer-col h4 { font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--gold); margin-bottom: 16px; }
+.footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+.footer-col ul li a { font-size: 0.85rem; color: rgba(255,255,255,0.55); transition: var(--transition); }
+.footer-col ul li a:hover { color: var(--gold-light); }
+.footer-bottom { border-top: 1px solid rgba(255,255,255,0.08); padding-top: 28px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; }
+.footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+
+.fade-in { opacity: 0; transform: translateY(32px); transition: opacity 0.7s ease, transform 0.7s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+
+.lightbox-modal {
+  display: none;
+  position: fixed;
+  z-index: 9999;
+  padding-top: 50px;
+  inset: 0;
+  background-color: rgba(10, 5, 8, 0.95);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+.lightbox-modal.show { display: flex; opacity: 1; }
+.lightbox-content { margin: auto; display: block; max-width: 90%; max-height: 85vh; object-fit: contain; border-radius: var(--radius-md); box-shadow: 0 10px 40px rgba(0,0,0,0.5); }
+.lightbox-close { position: absolute; top: 20px; right: 35px; color: var(--white); background: rgba(0,0,0,0.5); width: 50px; height: 50px; display: flex; align-items: center; justify-content: center; border-radius: 50%; font-size: 30px; cursor: pointer; border: 2px solid rgba(255,255,255,0.2); }
+.lightbox-nav { position: absolute; top: 50%; transform: translateY(-50%); background: rgba(0,0,0,0.5); border: 2px solid rgba(255,255,255,0.2); color: var(--white); font-size: 32px; padding: 20px 15px; cursor: pointer; border-radius: var(--radius-sm); }
+.lightbox-prev { left: 20px; }
+.lightbox-next { right: 20px; }
+
+@media (max-width: 1024px) {
+  .about-grid { grid-template-columns: 1fr; gap: 48px; }
+  .info-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .hamburger { display: flex; }
+  .hero-content { padding: 60px 20px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+  .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+  .mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: var(--burgundy-dark);
+    z-index: 999;
+    padding: 80px 24px 40px;
+    flex-direction: column;
+    gap: 8px;
+    overflow-y: auto;
+  }
+  .mobile-menu.open { display: flex; }
+  .mobile-menu a { color: rgba(255,255,255,0.85); font-size: 1.1rem; padding: 14px 0; border-bottom: 1px solid rgba(255,255,255,0.08); display: block; }
+  .mobile-close { position: fixed; top: 20px; right: 20px; background: rgba(255,255,255,0.1); border-radius: 50%; width: 40px; height: 40px; display: flex; align-items: center; justify-content: center; color: white; cursor: pointer; }
+}
+  </style>
+</head>
+<body>
+
+  <!-- ══ TOP BAR ══ -->
+  <div class="top-bar">
+    <div class="top-bar-inner container">
+      <span>📍 1029 Daze St, Ottawa, ON</span>
+      <span class="separator">|</span>
+      <a href="tel:+16135210498">📞 (613) 521-0498</a>
+      <span class="separator">|</span>
+      <a href="mailto:RSVP@ksrestaurant.ca">✉️ RSVP@ksrestaurant.ca</a>
+      <span class="separator">|</span>
+      <span>Open Tue–Sun &nbsp;·&nbsp; <strong>Walk-ins Welcome</strong></span>
+    </div>
+  </div>
+
+  <!-- ══ NAVBAR ══ -->
+  <nav class="navbar" id="navbar">
+    <div class="navbar-inner">
+      <a href="#" class="logo">
+        <span class="logo-main">KS on the Keys</span>
+      </a>
+
+      <ul class="nav-links" role="navigation">
+        <li><a href="#about">About</a></li>
+        <li class="has-dropdown">
+          <span>Menu ▾</span>
+          <ul class="dropdown">
+            <li><a href="#menu">Full Menu</a></li>
+          </ul>
+        </li>
+        <li><a href="#hours">Hours</a></li>
+        <li><a href="#faq">FAQ</a></li>
+        <li>
+          <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="nav-cta">Order Now</a>
+        </li>
+      </ul>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ══ MOBILE MENU ══ -->
+  <nav class="mobile-menu" id="mobile-menu">
+    <button class="mobile-close" id="mobile-close">✕</button>
+    <a href="#about">About</a>
+    <a href="#menu">Menu</a>
+    <a href="#hours">Hours</a>
+    <a href="#faq">FAQ</a>
+    <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="nav-cta">🍕 Order Online Now</a>
+  </nav>
+
+  <!-- ══ HERO ══ -->
+  <section class="hero" id="home">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content container">
+      <p class="hero-eyebrow">Ottawa South · Est. 1971</p>
+      <h1 class="hero-title">Something for<br><em>Everyone</em> at the Table</h1>
+      <p class="hero-subtitle">Over 50 years of crafting unforgettable meals. Pizza, Canadian classics, Middle Eastern flavours, and so much more — all under one roof.</p>
+      <div class="hero-actions">
+        <a href="#menu" class="btn btn-primary btn-lg">🍽 View Our Menu</a>
+        <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="btn btn-outline btn-lg">Order Pickup</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ ABOUT ══ -->
+  <section class="section about-section" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-image-wrap fade-in">
+          <img src="images/food/food-6.jpeg" alt="Food at KS">
+          <div class="about-badge">
+            <span class="years">50+</span>
+            <span class="since">Years of<br>Excellence</span>
+          </div>
+        </div>
+        <div class="about-text fade-in">
+          <p class="section-label">Our Story</p>
+          <h2 class="section-title">Ottawa South's Favourite <em>Since 1971</em></h2>
+          <p>Founded in May 1971, KS on the Keys has been proudly serving our Ottawa community for over 50 years. What started as a neighbourhood gem has grown into one of South Ottawa's most beloved dining destinations.</p>
+          <p>Our tradition of excellence continues with a modern twist on diverse world cuisines — from classic Canadian comfort food and authentic pizzas to vibrant Middle Eastern plates and Asian-inspired dishes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ MENU ══ -->
+  <section class="section menu-section" id="menu">
+    <div class="container">
+      <div class="section-header centered fade-in">
+        <p class="section-label">Our Menu</p>
+        <h2 class="section-title">Diverse Flavours, <em>One Kitchen</em></h2>
+        <p>From wood-fired pizzas to fresh pasta — KS has it all. All ingredients sourced fresh and locally, every single day.</p>
+      </div>
+
+      <div class="menu-tabs">
+        <button class="menu-tab active" data-tab="starters">Starters</button>
+        <button class="menu-tab" data-tab="entrees">Entrees</button>
+        <button class="menu-tab" data-tab="pizza">Pizza</button>
+      </div>
+
+      <div class="menu-panel active" id="panel-starters">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Fried Calamari</div><div class="menu-card-desc">Our famous calamari — served with garlic and seafood sauce.</div></div><div class="menu-card-price">$18</div></div>
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Thai Chicken Bites</div><div class="menu-card-desc">Crispy chicken bites tossed in sweet Thai chilli sauce.</div></div><div class="menu-card-price">$18</div></div>
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Hummus & Pita</div><div class="menu-card-desc">House-made hummus served with fresh warm pita.</div></div><div class="menu-card-price">$12</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-entrees">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Bombay Butter Chicken</div><div class="menu-card-desc">Marinated chicken simmered in aromatic butter cream tomato sauce.</div></div><div class="menu-card-price">$29</div></div>
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Greek Souvlaki</div><div class="menu-card-desc">Two 4oz skewers with rice and salad.</div></div><div class="menu-card-price">$28</div></div>
+        </div>
+      </div>
+
+      <div class="menu-panel" id="panel-pizza">
+        <div class="menu-grid">
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">KS Special</div><div class="menu-card-desc">Pepperoni, mushroom, green peppers, green olives.</div></div><div class="menu-card-price">From $16.75</div></div>
+          <div class="menu-card"><div class="menu-card-info"><div class="menu-card-name">Meat Lover</div><div class="menu-card-desc">Pepperoni, bacon, ham, Italian sausage.</div></div><div class="menu-card-price">From $18.75</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ PHOTO GALLERY ══ -->
+  <section class="gallery-section">
+    <div class="container fade-in">
+      <div class="gallery-grid">
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-1.jpeg" alt="Food"></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-2.jpeg" alt="Food"></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-3.jpeg" alt="Food"></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-7.jpeg" alt="Food"></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-8.jpeg" alt="Food"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══ FOOTER ══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <p>© 2025 KS on the Keys Restaurant. 1029 Daze Street, Ottawa, Ontario.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Lightbox Modal -->
+  <div id="lightboxModal" class="lightbox-modal">
+    <span class="lightbox-close" id="lightboxClose">&times;</span>
+    <button class="lightbox-nav lightbox-prev" id="lightboxPrev">←</button>
+    <img class="lightbox-content" id="lightboxImg">
+    <button class="lightbox-nav lightbox-next" id="lightboxNext">→</button>
+  </div>
+
+  <script>
+document.addEventListener('DOMContentLoaded', () => {
+  // Tabs
+  const tabs = document.querySelectorAll('.menu-tab');
+  const panels = document.querySelectorAll('.menu-panel');
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      const target = tab.dataset.tab;
+      tabs.forEach(t => t.classList.remove('active'));
+      panels.forEach(p => p.classList.remove('active'));
+      tab.classList.add('active');
+      document.getElementById('panel-' + target).classList.add('active');
+    });
+  });
+
+  // Mobile Menu
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const mobileClose = document.getElementById('mobile-close');
+  if (hamburger) hamburger.addEventListener('click', () => mobileMenu.classList.add('open'));
+  if (mobileClose) mobileClose.addEventListener('click', () => mobileMenu.classList.remove('open'));
+
+  // Scroll Reveal
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+      }
+    });
+  }, { threshold: 0.1 });
+  fadeEls.forEach(el => observer.observe(el));
+
+  // Navbar Scroll
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if (window.pageYOffset > 50) navbar.classList.add('scrolled');
+    else navbar.classList.remove('scrolled');
+  });
+
+  // Lightbox
+  const lightboxModal = document.getElementById('lightboxModal');
+  const lightboxImg = document.getElementById('lightboxImg');
+  const lightboxClose = document.getElementById('lightboxClose');
+  const lightboxPrev = document.getElementById('lightboxPrev');
+  const lightboxNext = document.getElementById('lightboxNext');
+  let currentGallery = [];
+  let currentIndex = 0;
+
+  if (lightboxModal) {
+    document.querySelectorAll('.lightbox-trigger').forEach(trigger => {
+      trigger.addEventListener('click', function() {
+        currentGallery = Array.from(document.querySelectorAll('.lightbox-trigger'));
+        currentIndex = currentGallery.indexOf(this);
+        updateImg();
+        lightboxModal.classList.add('show');
+      });
+    });
+    function updateImg() { lightboxImg.src = currentGallery[currentIndex].src; }
+    lightboxNext.addEventListener('click', () => { currentIndex = (currentIndex + 1) % currentGallery.length; updateImg(); });
+    lightboxPrev.addEventListener('click', () => { currentIndex = (currentIndex - 1 + currentGallery.length) % currentGallery.length; updateImg(); });
+    lightboxClose.addEventListener('click', () => lightboxModal.classList.remove('show'));
+  }
+});
+  </script>
+</body>
+</html>
