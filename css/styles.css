@@ -398,7 +398,10 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   color: var(--gold);
   margin-bottom: 12px;
   display: flex;
+  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  text-align: center;
   gap: 10px;
 }
 .section-label::before {
@@ -408,6 +411,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   height: 1.5px;
   background: var(--gold);
   flex-shrink: 0;
+  margin: 0 auto;
 }
 .section-title {
   font-family: var(--font-serif);
@@ -424,11 +428,13 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   max-width: 520px;
   line-height: 1.75;
 }
-.section-header { margin-bottom: 56px; }
-.section-header.centered { text-align: center; }
-.section-header.centered .section-label { justify-content: center; }
-.section-header.centered .section-label::before { display: none; }
-.section-header.centered .section-subtitle { margin: 0 auto; }
+.section-header { 
+  margin-bottom: 56px; 
+  text-align: center;
+}
+.section-header .section-subtitle { 
+  margin: 0 auto; 
+}
 
 /* ——— Who We Are ——— */
 .about-section { background: var(--white); }
@@ -756,7 +762,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 
 /* ——— Hours & Info ——— */
-.info-section { background: var(--burgundy-dark); padding: 80px 0; }
+.info-section { background: var(--burgundy-dark); padding: 96px 0; }
 .info-grid {
   display: grid;
   grid-template-columns: 1.5fr 1fr 1fr;
@@ -967,7 +973,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .fade-in.visible { opacity: 1; transform: translateY(0); }
 
 /* ——— Photo Gallery ——— */
-.gallery-section { background: var(--charcoal); padding: 80px 0; }
+.gallery-section { background: var(--charcoal); padding: 96px 0; }
 .gallery-grid {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -1071,7 +1077,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 }
 .subpage-content {
   background: var(--cream);
-  padding: 80px 0;
+  padding: 96px 0;
 }
 .document-content {
   max-width: 800px;
