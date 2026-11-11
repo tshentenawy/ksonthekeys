@@ -60,7 +60,8 @@ mobileMenu.classList.remove('open');
 hamburger.setAttribute('aria-expanded', 'false');
 document.body.style.overflow = '';
 }
-if (hamburger) hamburger.addEventListener('click', openMenu);
+if (hamburger) hamburger.addEventListener('click', function(){ if (mobileMenu.classList.contains('open')) closeMenu(); else openMenu(); });
+window.addEventListener('resize', function(){ if (window.innerWidth >= 769 && mobileMenu.classList.contains('open')) closeMenu(); });
 if (mobileClose) mobileClose.addEventListener('click', closeMenu);
 document.querySelectorAll('.mobile-link').forEach(link => {
 link.addEventListener('click', closeMenu);
