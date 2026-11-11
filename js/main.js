@@ -169,13 +169,6 @@ window.addEventListener('resize', syncNavbarOffset);
 window.addEventListener('scroll', syncNavbarOffset, { passive: true });
 }
 updateOpenStatus();
-const heroVideo = document.getElementById('hero-video');
-if (heroVideo && window.innerWidth < 768) {
-heroVideo.pause();
-heroVideo.removeAttribute('autoplay');
-heroVideo.querySelectorAll('source').forEach(s => s.remove());
-heroVideo.load();
-}
 const lightboxModal = document.getElementById('lightboxModal');
 const lightboxImg = document.getElementById('lightboxImg');
 const lightboxClose = document.getElementById('lightboxClose');

@@ -281,10 +281,24 @@
   <!-- ══ HERO ══ -->
   <section class="hero" id="home" aria-label="Hero section">
     <div class="hero-bg" role="img" aria-label="KS on the Keys restaurant atmosphere">
-      <video id="hero-video" autoplay muted loop playsinline preload="metadata">
-        <source src="images/hero-video-web.webm" type="video/webm" media="(min-width: 768px)">
-        <source src="images/hero-video-web.mp4" type="video/mp4" media="(min-width: 768px)">
-      </video>
+      <video id="hero-video" autoplay muted loop playsinline preload="metadata" aria-hidden="true"></video>
+      <script>
+      (function(){
+        var v=document.getElementById('hero-video');
+        var mobile=window.matchMedia('(max-width: 767px)').matches;
+        function add(src,type){var s=document.createElement('source');s.src=src;s.type=type;v.appendChild(s);}
+        if(mobile){
+          v.setAttribute('poster','images/hero-poster.webp');
+          add('images/hero-video-mobile.mp4','video/mp4');
+        }else{
+          add('images/hero-video-web.webm','video/webm');
+          add('images/hero-video-web.mp4','video/mp4');
+        }
+        v.muted=true;v.load();
+        var p=v.play();if(p&&p.catch){p.catch(function(){});}
+        document.addEventListener('touchstart',function(){if(v.paused){v.play().catch(function(){});}},{once:true,passive:true});
+      })();
+      </script>
     </div>
     <div class="hero-overlay"></div>
     <div class="hero-content container">
