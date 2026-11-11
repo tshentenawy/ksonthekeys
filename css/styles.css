@@ -22,3 +22,17 @@
 .hero-hours{margin-top:24px;padding-top:18px}
 .subpage-hero{padding-top:130px}
 }
+.badge-spicy{background:#FCE4EC;color:#C62828}
+.badge-new{background:#FFF8E1;color:#B78103;border:1px solid rgba(196,154,60,0.4)}
+.menu-card{flex-wrap:wrap}
+.menu-card-price{text-align:right;max-width:100%}
+.pizza-table-wrap{overflow-x:auto;background:var(--white);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);border:1px solid rgba(0,0,0,0.05);padding:24px}
+.pizza-table{width:100%;border-collapse:collapse;min-width:560px;font-size:0.92rem}
+.pizza-table th{font-family:var(--font-serif);font-size:0.95rem;font-weight:700;color:var(--burgundy-dark);text-align:right;padding:12px 14px;border-bottom:2px solid var(--gold);white-space:nowrap}
+.pizza-table th:first-child{text-align:left}
+.pizza-table td{padding:12px 14px;border-bottom:1px solid rgba(0,0,0,0.06);vertical-align:top}
+.pizza-table tr:last-child td{border-bottom:none}
+.pizza-table td:not(:first-child){font-family:var(--font-serif);font-weight:700;color:var(--burgundy);text-align:right;white-space:nowrap;font-size:1rem}
+.pizza-table .pizza-name{font-family:var(--font-serif);font-weight:600;color:var(--burgundy-dark);font-size:1rem}
+.pizza-table .pizza-desc{font-size:0.82rem;color:var(--text-light);margin-top:2px;line-height:1.45}
+.pizza-table .pizza-subhead td{font-family:var(--font-serif);font-size:1.1rem;font-weight:700;color:var(--burgundy-dark);padding-top:24px;border-bottom:2px solid var(--gold);text-align:left}

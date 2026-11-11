@@ -31,7 +31,7 @@
 
 ## Key Pages
 - [Homepage](https://www.ksonthekeys.com/): Overview, hours, location, and highlights
-- [Full Menu](https://www.ksonthekeys.com/menu): Complete restaurant menu with descriptions, prices, and HALAL / VEGAN / VEGETARIAN labels
+- [Full Menu](https://www.ksonthekeys.com/menu): Complete restaurant menu with descriptions, prices, and GF / VEGAN / SPICY / NEW labels
 - [About KS on the Keys](https://www.ksonthekeys.com/about): History since May 1971, Swaita family story, cuisine, and South Keys location facts
 - [Private Event Spaces](https://www.ksonthekeys.com/event-spaces): Private Event Room (up to 90), Semi-Private Mezzanine (25–60), and Private Board Room (12–24)
 - [Holiday Parties](https://www.ksonthekeys.com/holidays): Corporate and family Christmas & holiday party packages (Nov 1 – Dec 30)
