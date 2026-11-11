@@ -152,44 +152,83 @@ document.addEventListener('DOMContentLoaded', () => {
   // ── Current open status indicator ─────────────
   function updateOpenStatus() {
     const now = new Date();
-    const day = now.getDay(); // 0=Sun, 1=Mon, 2=Tue, 3=Wed, 4=Thu, 5=Fri, 6=Sat
-    const hour = now.getHours();
-    const minute = now.getMinutes();
+    const formatter = new Intl.DateTimeFormat('en-US', {
+      timeZone: 'America/Toronto',
+      weekday: 'short',
+      hour: 'numeric',
+      minute: 'numeric',
+      hour12: false
+    });
+    const parts = formatter.formatToParts(now);
+    const weekdayStr = parts.find(p => p.type === 'weekday')?.value || 'Sun';
+    let hour = parseInt(parts.find(p => p.type === 'hour')?.value || '0', 10);
+    if (hour === 24) hour = 0;
+    const minute = parseInt(parts.find(p => p.type === 'minute')?.value || '0', 10);
     const timeNum = hour * 100 + minute;
+
+    const dayMap = { Sun: 0, Mon: 1, Tue: 2, Wed: 3, Thu: 4, Fri: 5, Sat: 6 };
+    const day = dayMap[weekdayStr] ?? now.getDay();
 
     let isOpen = false;
 
     if (day === 1) { // Monday
       isOpen = false;
-    } else if (day === 2 || day === 3) { // Tue/Wed
+    } else if (day === 2 || day === 3) { // Tue/Wed: 11am–8pm
       isOpen = timeNum >= 1100 && timeNum < 2000;
-    } else if (day === 4 || day === 5) { // Thu/Fri
+    } else if (day === 4 || day === 5) { // Thu/Fri: 11am–10pm
       isOpen = timeNum >= 1100 && timeNum < 2200;
-    } else if (day === 6) { // Sat
+    } else if (day === 6) { // Sat: 10am–10pm
       isOpen = timeNum >= 1000 && timeNum < 2200;
-    } else if (day === 0) { // Sun
+    } else if (day === 0) { // Sun: 9am–8pm
       isOpen = timeNum >= 900 && timeNum < 2000;
     }
 
     // Add status to top bar
     const topBar = document.querySelector('.top-bar-inner');
-    if (topBar) {
+    if (topBar && !topBar.querySelector('.open-status-badge')) {
       const statusBadge = document.createElement('span');
+      statusBadge.className = 'open-status-badge';
       statusBadge.style.cssText = `
-        background: ${isOpen ? 'rgba(76,175,80,0.2)' : 'rgba(244,67,54,0.2)'};
-        color: ${isOpen ? '#81C784' : '#E57373'};
-        border: 1px solid ${isOpen ? 'rgba(76,175,80,0.4)' : 'rgba(244,67,54,0.4)'};
+        background: ${isOpen ? 'rgba(76,175,80,0.25)' : 'rgba(244,67,54,0.25)'};
+        color: ${isOpen ? '#81C784' : '#FF8A80'};
+        border: 1px solid ${isOpen ? 'rgba(76,175,80,0.5)' : 'rgba(244,67,54,0.5)'};
         border-radius: 20px;
         padding: 2px 10px;
         font-size: 0.72rem;
         font-weight: 600;
+        white-space: nowrap;
       `;
       statusBadge.textContent = isOpen ? '● Open Now' : '● Closed';
       topBar.prepend(statusBadge);
     }
+
+    // Dynamically adjust navbar top offset so it never overlaps the top-bar
+    function syncNavbarOffset() {
+      const topBarEl = document.querySelector('.top-bar');
+      const navEl = document.getElementById('navbar');
+      if (topBarEl && navEl) {
+        if (window.pageYOffset > 50) {
+          navEl.style.top = '0px';
+        } else {
+          navEl.style.top = topBarEl.offsetHeight + 'px';
+        }
+      }
+    }
+    syncNavbarOffset();
+    window.addEventListener('resize', syncNavbarOffset);
+    window.addEventListener('scroll', syncNavbarOffset, { passive: true });
   }
 
   updateOpenStatus();
+
+  // ——— Hero Video Mobile Optimization (<768px) ———
+  const heroVideo = document.getElementById('hero-video');
+  if (heroVideo && window.innerWidth < 768) {
+    heroVideo.pause();
+    heroVideo.removeAttribute('autoplay');
+    heroVideo.querySelectorAll('source').forEach(s => s.remove());
+    heroVideo.load();
+  }
 
   // ——— Lightbox Modal Logic ———
   const lightboxModal = document.getElementById('lightboxModal');

@@ -56,6 +56,8 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 
 /* ——— Top Bar ——— */
 .top-bar {
+  position: relative;
+  z-index: 1001;
   background: #A30000;
   color: rgba(255,255,255,0.9);
   min-height: 36px;
@@ -71,7 +73,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 .top-bar .top-bar-inner {
   display: flex;
   justify-content: center;
-  gap: 32px;
+  gap: 24px;
   align-items: center;
   flex-wrap: wrap;
 }
@@ -80,15 +82,16 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
 /* ——— Navigation ——— */
 .navbar {
   position: fixed;
-  top: 0;
+  top: 36px;
   left: 0;
   right: 0;
   z-index: 1000;
   background: transparent;
   border-bottom: 1px solid transparent;
-  transition: background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
+  transition: top 0.3s ease, background 0.4s ease, border-color 0.4s ease, box-shadow 0.4s ease;
 }
 .navbar.scrolled {
+  top: 0;
   background: rgba(163, 0, 0, 0.97);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -823,37 +826,22 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 22px;
-  cursor: pointer;
-  font-size: 0.92rem;
-  font-weight: 500;
+  padding: 18px 22px 8px;
+  font-size: 0.96rem;
+  font-weight: 600;
   color: var(--burgundy-dark);
-  transition: var(--transition);
   gap: 16px;
 }
-.faq-question:hover { background: var(--cream); }
 .faq-chevron {
-  width: 20px;
-  height: 20px;
-  border: 2px solid var(--burgundy);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  font-size: 0.8rem;
-  color: var(--burgundy);
-  transition: var(--transition);
+  display: none !important;
 }
-.faq-item.open .faq-chevron { transform: rotate(180deg); background: var(--burgundy); color: var(--white); }
 .faq-answer {
-  display: none;
+  display: block !important;
   padding: 0 22px 18px;
   font-size: 0.88rem;
   color: var(--text-mid);
   line-height: 1.7;
 }
-.faq-item.open .faq-answer { display: block; }
 .faq-contact-box {
   background: var(--cream);
   border-radius: var(--radius-lg);
@@ -1138,10 +1126,39 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   .footer-grid { grid-template-columns: 1fr 1fr; }
 }
 @media (max-width: 768px) {
+  .top-bar {
+    position: relative;
+    z-index: 1001;
+    padding: 6px 12px;
+    font-size: 0.72rem;
+  }
+  .top-bar .top-bar-inner {
+    gap: 8px 12px;
+  }
+  .top-bar .separator {
+    display: none;
+  }
+  .navbar {
+    top: 56px;
+  }
+  .navbar.scrolled {
+    top: 0;
+  }
+  .navbar-inner {
+    height: 68px;
+    padding: 0 16px;
+  }
+  .logo img.logo-img {
+    height: 48px;
+    max-width: 130px;
+  }
+  .document-content {
+    padding: 32px 20px;
+  }
   .nav-links, .hamburger { display: flex; }
   .nav-links { display: none; }
   .hamburger { display: flex; }
-  .subpage-hero { padding: 140px 20px 80px; }
+  .subpage-hero { padding: 150px 20px 80px; }
   .mobile-menu {
     display: none;
     position: fixed;
@@ -1322,4 +1339,15 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
   }
   .lightbox-prev { left: 10px; }
   .lightbox-next { right: 10px; }
+}
+
+@media (max-width: 767px) {
+  .hero-bg {
+    background-image: url('../images/hero-poster.jpg') !important;
+    background-size: cover !important;
+    background-position: center !important;
+  }
+  .hero-bg video {
+    display: none !important;
+  }
 }
