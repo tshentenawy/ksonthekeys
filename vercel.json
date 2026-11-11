@@ -2,7 +2,7 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/menus", "destination": "/#menu", "permanent": true },
+    { "source": "/menus", "destination": "/menu", "permanent": true },
     { "source": "/in-house-catering", "destination": "/catering", "permanent": true },
     { "source": "/off-site-catering", "destination": "/catering", "permanent": true },
     { "source": "/corporate-events-flyer", "destination": "/corporate-events", "permanent": true },

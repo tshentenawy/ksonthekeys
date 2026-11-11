@@ -17,6 +17,10 @@
   <meta name="twitter:title" content="Private Event Spaces in Ottawa | KS on the Keys">
   <meta name="twitter:description" content="Book private event spaces in Ottawa South for 12 to 90 guests. Private Event Room, Semi-Private Mezzanine & Private Board Room with AV and free parking.">
   <meta name="twitter:image" content="https://www.ksonthekeys.com/images/exterior/exterior-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C62JPPWXDK"></script>
@@ -33,14 +37,16 @@
     "@type": "Restaurant",
     "name": "KS on the Keys",
     "url": "https://www.ksonthekeys.com",
-    "logo": "https://www.ksonthekeys.com/images/logo.png",
-    "image": "https://www.ksonthekeys.com/images/exterior/exterior-1.png",
+    "logo": "https://www.ksonthekeys.com/images/ks-on-the-keys-logo-ottawa.webp",
+    "image": "https://www.ksonthekeys.com/images/exterior/ks-on-the-keys-exterior-south-keys-ottawa.webp",
     "telephone": "613-521-0498",
     "email": "RSVP@ksrestaurant.ca",
-    "foundingDate": "1971-05",
+    "foundingDate": "1971",
     "priceRange": "$$",
-    "acceptsReservations": "True",
-    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza"],
+    "hasMenu": "https://www.ksonthekeys.com/menu",
+    "acceptsReservations": "https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us",
+    "areaServed": "Ottawa",
+    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza", "Halal"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1029 Dazé Street",
@@ -49,6 +55,31 @@
       "postalCode": "K1V 2G3",
       "addressCountry": "CA"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.3547,
+      "longitude": -75.6562
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free on-site parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private dining and event rooms",
+        "value": true
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ksonthekeys",
+      "https://www.instagram.com/ksonthekeys",
+      "https://www.tiktok.com/@ksonthekeys",
+      "https://maps.google.com/?q=KS+on+the+Keys+1029+Daze+Street+Ottawa",
+      "https://www.tripadvisor.ca/Restaurant_Review-g155004-d708046-Reviews-KS_on_the_Keys_Restaurant-Ottawa_Ontario.html",
+      "https://www.yelp.ca/biz/ks-on-the-keys-restaurant-ottawa"
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -73,6 +104,75 @@
         "dayOfWeek": "Sunday",
         "opens": "09:00",
         "closes": "20:00"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.ksonthekeys.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Event Spaces",
+        "item": "https://www.ksonthekeys.com/event-spaces"
+      }
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "EventVenue",
+        "name": "Private Event Room at KS on the Keys",
+        "description": "Fully private ground-floor event room in South Keys, Ottawa with AV equipment, high-speed Wi-Fi, and customizable banquet layouts.",
+        "maximumAttendeeCapacity": 90,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1029 Dazé Street",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "postalCode": "K1V 2G3",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "EventVenue",
+        "name": "Semi-Private Mezzanine at KS on the Keys",
+        "description": "Second-floor semi-private mezzanine overlooking the restaurant, accessible by elevator, ideal for 25 to 60 guests.",
+        "maximumAttendeeCapacity": 60,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1029 Dazé Street",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "postalCode": "K1V 2G3",
+          "addressCountry": "CA"
+        }
+      },
+      {
+        "@type": "EventVenue",
+        "name": "Private Board Room at KS on the Keys",
+        "description": "Intimate private boardroom for 12 to 24 guests equipped with a 70-inch TV, microphone, speaker, and elevator access.",
+        "maximumAttendeeCapacity": 24,
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1029 Dazé Street",
+          "addressLocality": "Ottawa",
+          "addressRegion": "ON",
+          "postalCode": "K1V 2G3",
+          "addressCountry": "CA"
+        }
       }
     ]
   }
@@ -223,7 +323,7 @@
 </head>
 <body>
 
-          <!-- ══ TOP BAR ══ -->
+            <!-- ══ TOP BAR ══ -->
   <div class="top-bar">
     <div class="top-bar-inner container">
       <span>📍 1029 Dazé Street, Ottawa, ON K1V 2G3</span>
@@ -240,15 +340,15 @@
   <nav class="navbar subpage-nav" id="navbar">
     <div class="navbar-inner">
       <a href="/" class="logo" aria-label="KS on the Keys Home">
-        <img src="images/logo.png" alt="KS on the Keys Restaurant logo" class="logo-img">
+        <img src="images/ks-on-the-keys-logo-ottawa.webp" alt="KS on the Keys restaurant logo in South Keys, Ottawa" class="logo-img" width="240" height="240">
       </a>
 
       <ul class="nav-links" role="navigation" aria-label="Main navigation">
-        <li><a href="/#about">About</a></li>
+        <li><a href="/about">About</a></li>
         <li class="has-dropdown">
           <span>Menu ▾</span>
           <ul class="dropdown">
-            <li><a href="/#menu">Full Menu</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
           </ul>
         </li>
@@ -305,8 +405,8 @@
   <!-- ══ MOBILE MENU ══ -->
   <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
-    <a href="/#about" class="mobile-link">About</a>
-    <a href="/#menu" class="mobile-link">Menu</a>
+    <a href="/about" class="mobile-link">About</a>
+    <a href="/menu" class="mobile-link">Full Menu</a>
     <a href="/dailyspecials" class="mobile-link">Daily Specials</a>
     <a href="/event-spaces" class="mobile-link">Event Spaces</a>
     <a href="/catering" class="mobile-link">Catering</a>
@@ -343,8 +443,24 @@
     <div class="subpage-hero-overlay" style="background: rgba(0, 0, 0, 0.4);"></div>
     <div class="subpage-hero-content fade-in">
       <p class="hero-eyebrow" style="justify-content:center;">Celebrate with Us</p>
-      <h1 class="hero-title" style="font-size:clamp(2rem, 5vw, 4rem);">Event <em>Spaces</em></h1>
-      <p class="hero-subtitle" style="margin: 0 auto;">Three beautifully appointed venues — from intimate boardroom gatherings to grand celebrations for 12 to 90 guests.</p>
+      <h1 class="hero-title" style="font-size:clamp(2rem, 5vw, 4rem);">Private Event Venue in <em>Ottawa</em></h1>
+      <p class="hero-subtitle" style="margin: 0 auto;">Looking for a private event venue in Ottawa? KS on the Keys in South Keys offers three beautifully appointed private and semi-private rooms for 12 to 90 guests, with 100% halal catering and free on-site parking.</p>
+    </div>
+  </section>
+
+    <!-- ══ QUICK FACTS ══ -->
+  <section style="background: var(--white); padding: 36px 0; border-bottom: 1px solid rgba(196,154,60,0.2);" aria-label="Quick facts about event spaces">
+    <div class="container">
+      <div style="background: var(--cream); border-left: 4px solid var(--gold); border-radius: var(--radius-md); padding: 24px 28px; max-width: 960px; margin: 0 auto;">
+        <h2 style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--burgundy-dark); margin-bottom: 12px;">Quick Facts — Private Event Venue in Ottawa</h2>
+        <ul style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 10px 24px; font-size: 0.92rem; color: var(--text-dark);">
+          <li><strong>Capacity:</strong> 12 to 90 guests across 3 rooms (Private Event Room up to 90, Mezzanine 25–60, Board Room 12–24)</li>
+          <li><strong>Price From:</strong> Group buffets from $45/person, plated dinners $54/person, or hourly room rental</li>
+          <li><strong>Halal &amp; Dietary:</strong> 100% halal chicken and beef, plus vegetarian, vegan, and gluten-free options</li>
+          <li><strong>Parking &amp; Location:</strong> Free on-site parking at 1029 Dazé Street, South Keys, Ottawa</li>
+          <li><strong>How to Book:</strong> <a href="/book-large" style="color:var(--burgundy); font-weight:600;">Inquire online</a>, email <a href="mailto:RSVP@ksrestaurant.ca" style="color:var(--burgundy); font-weight:600;">RSVP@ksrestaurant.ca</a>, or call <a href="tel:+16135210498" style="color:var(--burgundy); font-weight:600;">613-521-0498</a></li>
+        </ul>
+      </div>
     </div>
   </section>
 
@@ -354,25 +470,25 @@
       <div class="space-grid">
         <!-- Slideshow -->
         <div class="space-slideshow" id="slideshow-grand">
-          <div class="slide active lightbox-trigger" data-src="images/events/grand-event-room-1.jpeg" style="background-image: url('images/events/grand-event-room-1.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-2.jpeg" style="background-image: url('images/events/grand-event-room-2.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-3.jpeg" style="background-image: url('images/events/grand-event-room-3.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-4.jpeg" style="background-image: url('images/events/grand-event-room-4.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-5.jpeg" style="background-image: url('images/events/grand-event-room-5.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-6.jpeg" style="background-image: url('images/events/grand-event-room-6.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-7.jpeg" style="background-image: url('images/events/grand-event-room-7.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/grand-event-room-8.jpeg" style="background-image: url('images/events/grand-event-room-8.jpeg');"></div>
+          <div class="slide active lightbox-trigger" data-src="images/events/private-event-room-ottawa-1.webp" style="background-image: url('images/events/private-event-room-ottawa-1.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-2.webp" style="background-image: url('images/events/private-event-room-ottawa-2.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-3.webp" style="background-image: url('images/events/private-event-room-ottawa-3.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-4.webp" style="background-image: url('images/events/private-event-room-ottawa-4.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-5.webp" style="background-image: url('images/events/private-event-room-ottawa-5.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-6.webp" style="background-image: url('images/events/private-event-room-ottawa-6.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-7.webp" style="background-image: url('images/events/private-event-room-ottawa-7.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/private-event-room-ottawa-8.webp" style="background-image: url('images/events/private-event-room-ottawa-8.webp');"></div>
           <button class="slide-btn prev" onclick="changeSlide('slideshow-grand', -1)" aria-label="Previous photo">&#8592;</button>
           <button class="slide-btn next" onclick="changeSlide('slideshow-grand', 1)" aria-label="Next photo">&#8594;</button>
           <div class="slide-dots" id="dots-slideshow-grand">
-            <button class="slide-dot active" onclick="goToSlide('slideshow-grand', 0)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 1)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 2)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 3)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 4)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 5)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 6)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-grand', 7)"></button>
+            <button aria-label="View slide 1" class="slide-dot active" onclick="goToSlide('slideshow-grand', 0)"></button>
+            <button aria-label="View slide 2" class="slide-dot" onclick="goToSlide('slideshow-grand', 1)"></button>
+            <button aria-label="View slide 3" class="slide-dot" onclick="goToSlide('slideshow-grand', 2)"></button>
+            <button aria-label="View slide 4" class="slide-dot" onclick="goToSlide('slideshow-grand', 3)"></button>
+            <button aria-label="View slide 5" class="slide-dot" onclick="goToSlide('slideshow-grand', 4)"></button>
+            <button aria-label="View slide 6" class="slide-dot" onclick="goToSlide('slideshow-grand', 5)"></button>
+            <button aria-label="View slide 7" class="slide-dot" onclick="goToSlide('slideshow-grand', 6)"></button>
+            <button aria-label="View slide 8" class="slide-dot" onclick="goToSlide('slideshow-grand', 7)"></button>
           </div>
         </div>
         <!-- Info -->
@@ -400,19 +516,19 @@
       <div class="space-grid">
         <!-- Slideshow -->
         <div class="space-slideshow" id="slideshow-mezzanine">
-          <div class="slide active lightbox-trigger" data-src="images/events/mezzanine-1.jpeg" style="background-image: url('images/events/mezzanine-1.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-2.jpeg" style="background-image: url('images/events/mezzanine-2.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-3.jpeg" style="background-image: url('images/events/mezzanine-3.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-4.jpeg" style="background-image: url('images/events/mezzanine-4.jpeg');"></div>
-          <div class="slide lightbox-trigger" data-src="images/events/mezzanine-5.jpeg" style="background-image: url('images/events/mezzanine-5.jpeg');"></div>
+          <div class="slide active lightbox-trigger" data-src="images/events/semi-private-mezzanine-ottawa-1.webp" style="background-image: url('images/events/semi-private-mezzanine-ottawa-1.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/semi-private-mezzanine-ottawa-2.webp" style="background-image: url('images/events/semi-private-mezzanine-ottawa-2.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/semi-private-mezzanine-ottawa-3.webp" style="background-image: url('images/events/semi-private-mezzanine-ottawa-3.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/semi-private-mezzanine-ottawa-4.webp" style="background-image: url('images/events/semi-private-mezzanine-ottawa-4.webp');"></div>
+          <div class="slide lightbox-trigger" data-src="images/events/semi-private-mezzanine-ottawa-5.webp" style="background-image: url('images/events/semi-private-mezzanine-ottawa-5.webp');"></div>
           <button class="slide-btn prev" onclick="changeSlide('slideshow-mezzanine', -1)" aria-label="Previous photo">&#8592;</button>
           <button class="slide-btn next" onclick="changeSlide('slideshow-mezzanine', 1)" aria-label="Next photo">&#8594;</button>
           <div class="slide-dots" id="dots-slideshow-mezzanine">
-            <button class="slide-dot active" onclick="goToSlide('slideshow-mezzanine', 0)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 1)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 2)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 3)"></button>
-            <button class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 4)"></button>
+            <button aria-label="View slide 1" class="slide-dot active" onclick="goToSlide('slideshow-mezzanine', 0)"></button>
+            <button aria-label="View slide 2" class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 1)"></button>
+            <button aria-label="View slide 3" class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 2)"></button>
+            <button aria-label="View slide 4" class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 3)"></button>
+            <button aria-label="View slide 5" class="slide-dot" onclick="goToSlide('slideshow-mezzanine', 4)"></button>
           </div>
         </div>
         <!-- Info -->
@@ -439,11 +555,11 @@
       <div class="space-grid">
         <!-- Slideshow -->
         <div class="space-slideshow" id="slideshow-boardroom">
-          <div class="slide active lightbox-trigger" data-src="images/events/boardroom-1.jpeg" style="background-image: url('images/events/boardroom-1.jpeg');"></div>
+          <div class="slide active lightbox-trigger" data-src="images/events/private-boardroom-ottawa-1.webp" style="background-image: url('images/events/private-boardroom-ottawa-1.webp');"></div>
           <button class="slide-btn prev" onclick="changeSlide('slideshow-boardroom', -1)" aria-label="Previous photo">&#8592;</button>
           <button class="slide-btn next" onclick="changeSlide('slideshow-boardroom', 1)" aria-label="Next photo">&#8594;</button>
           <div class="slide-dots" id="dots-slideshow-boardroom">
-            <button class="slide-dot active" onclick="goToSlide('slideshow-boardroom', 0)"></button>
+            <button aria-label="View slide 1" class="slide-dot active" onclick="goToSlide('slideshow-boardroom', 0)"></button>
           </div>
         </div>
         <!-- Info -->
@@ -519,13 +635,15 @@
         </div>
 
         <div class="catering-image-wrap fade-in">
-          <img src="images/events/grand-event-room-2.jpeg" alt="Elegant catering setup at KS on the Keys" loading="lazy">
+          <img src="images/events/private-event-room-ottawa-2.webp" alt="Buffet and table settings inside the Private Event Room at KS on the Keys Ottawa" width="1600" height="1200" loading="lazy" decoding="async">
         </div>
       </div>
     </div>
   </section>
 
-          <!-- ══ FOOTER ══ -->
+            <div style="text-align:center; padding: 18px 24px; background: var(--cream); font-size: 0.85rem; color: var(--text-light);">Last updated: November 2026</div>
+
+    <!-- ══ FOOTER ══ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -540,7 +658,8 @@
         <div class="footer-col">
           <h4>Dining</h4>
           <ul>
-            <li><a href="/#menu">Our Menu</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
             <li><a href="/breakfast-buffet">Breakfast Buffet</a></li>
             <li><a href="/brunch-buffet">Brunch Buffet</a></li>
@@ -578,8 +697,8 @@
       <div class="footer-bottom">
         <p>© 2026 KS on the Keys Restaurant. 1029 Dazé Street, Ottawa, ON K1V 2G3. All rights reserved.</p>
         <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
-          <a href="#" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+          <a href="https://www.facebook.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
+          <a href="https://www.instagram.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
         </div>
       </div>
     </div>

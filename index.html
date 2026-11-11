@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>KS on the Keys | Ottawa Restaurant Since 1971</title>
+  <title>KS on the Keys | Halal Restaurant & Event Venue Ottawa</title>
   <meta name="description" content="Ottawa South's favourite halal restaurant since 1971. Pizza, Lebanese, Italian, Chinese & Canadian dishes, buffets & private events at 1029 Dazé St.">
   <link rel="canonical" href="https://www.ksonthekeys.com/">
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-  <meta property="og:title" content="KS on the Keys | Ottawa Restaurant Since 1971">
+  <meta property="og:title" content="KS on the Keys | Halal Restaurant & Event Venue Ottawa">
   <meta property="og:description" content="Ottawa South's favourite halal restaurant since 1971. Pizza, Lebanese, Italian, Chinese & Canadian dishes, buffets & private events at 1029 Dazé St.">
   <meta property="og:url" content="https://www.ksonthekeys.com/">
   <meta property="og:type" content="website">
   <meta property="og:image" content="https://www.ksonthekeys.com/images/exterior/exterior-1.png">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="KS on the Keys | Ottawa Restaurant Since 1971">
+  <meta name="twitter:title" content="KS on the Keys | Halal Restaurant & Event Venue Ottawa">
   <meta name="twitter:description" content="Ottawa South's favourite halal restaurant since 1971. Pizza, Lebanese, Italian, Chinese & Canadian dishes, buffets & private events at 1029 Dazé St.">
   <meta name="twitter:image" content="https://www.ksonthekeys.com/images/exterior/exterior-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
+  <link rel="preload" as="image" href="images/hero-poster.webp">
   <link rel="stylesheet" href="css/styles.css">
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C62JPPWXDK"></script>
@@ -33,14 +38,16 @@
     "@type": "Restaurant",
     "name": "KS on the Keys",
     "url": "https://www.ksonthekeys.com",
-    "logo": "https://www.ksonthekeys.com/images/logo.png",
-    "image": "https://www.ksonthekeys.com/images/exterior/exterior-1.png",
+    "logo": "https://www.ksonthekeys.com/images/ks-on-the-keys-logo-ottawa.webp",
+    "image": "https://www.ksonthekeys.com/images/exterior/ks-on-the-keys-exterior-south-keys-ottawa.webp",
     "telephone": "613-521-0498",
     "email": "RSVP@ksrestaurant.ca",
-    "foundingDate": "1971-05",
+    "foundingDate": "1971",
     "priceRange": "$$",
-    "acceptsReservations": "True",
-    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza"],
+    "hasMenu": "https://www.ksonthekeys.com/menu",
+    "acceptsReservations": "https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us",
+    "areaServed": "Ottawa",
+    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza", "Halal"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1029 Dazé Street",
@@ -49,6 +56,31 @@
       "postalCode": "K1V 2G3",
       "addressCountry": "CA"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.3547,
+      "longitude": -75.6562
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free on-site parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private dining and event rooms",
+        "value": true
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ksonthekeys",
+      "https://www.instagram.com/ksonthekeys",
+      "https://www.tiktok.com/@ksonthekeys",
+      "https://maps.google.com/?q=KS+on+the+Keys+1029+Daze+Street+Ottawa",
+      "https://www.tripadvisor.ca/Restaurant_Review-g155004-d708046-Reviews-KS_on_the_Keys_Restaurant-Ottawa_Ontario.html",
+      "https://www.yelp.ca/biz/ks-on-the-keys-restaurant-ottawa"
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -136,7 +168,7 @@
 </head>
 <body>
 
-          <!-- ══ TOP BAR ══ -->
+            <!-- ══ TOP BAR ══ -->
   <div class="top-bar">
     <div class="top-bar-inner container">
       <span>📍 1029 Dazé Street, Ottawa, ON K1V 2G3</span>
@@ -153,15 +185,15 @@
   <nav class="navbar" id="navbar">
     <div class="navbar-inner">
       <a href="/" class="logo" aria-label="KS on the Keys Home">
-        <img src="images/logo.png" alt="KS on the Keys Restaurant logo" class="logo-img">
+        <img src="images/ks-on-the-keys-logo-ottawa.webp" alt="KS on the Keys restaurant logo in South Keys, Ottawa" class="logo-img" width="240" height="240">
       </a>
 
       <ul class="nav-links" role="navigation" aria-label="Main navigation">
-        <li><a href="#about">About</a></li>
+        <li><a href="/about">About</a></li>
         <li class="has-dropdown">
           <span>Menu ▾</span>
           <ul class="dropdown">
-            <li><a href="#menu">Full Menu</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
           </ul>
         </li>
@@ -218,8 +250,8 @@
   <!-- ══ MOBILE MENU ══ -->
   <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
-    <a href="#about" class="mobile-link">About</a>
-    <a href="#menu" class="mobile-link">Menu</a>
+    <a href="/about" class="mobile-link">About</a>
+    <a href="/menu" class="mobile-link">Full Menu</a>
     <a href="/dailyspecials" class="mobile-link">Daily Specials</a>
     <a href="/event-spaces" class="mobile-link">Event Spaces</a>
     <a href="/catering" class="mobile-link">Catering</a>
@@ -248,8 +280,9 @@
 
   <!-- ══ HERO ══ -->
   <section class="hero" id="home" aria-label="Hero section">
-    <div class="hero-bg" role="img" aria-label="KS on the Keys restaurant atmosphere" style="background-image: url('images/hero-poster.jpg'); background-size: cover; background-position: center;">
-      <video id="hero-video" poster="images/hero-poster.jpg" autoplay muted loop playsinline>
+    <div class="hero-bg" role="img" aria-label="KS on the Keys restaurant atmosphere">
+      <video id="hero-video" autoplay muted loop playsinline preload="metadata">
+        <source src="images/hero-video-web.webm" type="video/webm" media="(min-width: 768px)">
         <source src="images/hero-video-web.mp4" type="video/mp4" media="(min-width: 768px)">
       </video>
     </div>
@@ -257,11 +290,10 @@
     <div class="hero-content container">
       <p class="hero-eyebrow">Ottawa South · Est. 1971</p>
       <h1 class="hero-title">
-        Something for<br><em>Everyone</em> at the Table
+        Something for <em>Everyone</em> — Halal Restaurant and Event Venue in South Keys, Ottawa
       </h1>
       <p class="hero-subtitle">
-        Over 50 years of crafting unforgettable meals from fresh, local ingredients. 
-        Pizza, Canadian classics, Middle Eastern flavours, and so much more — all under one roof.
+        Welcome to KS on the Keys, your family-owned halal restaurant and event venue in South Keys, Ottawa since 1971. Enjoy pizza, Lebanese, Italian, Chinese, and Canadian classics — plus private event rooms for 12 to 90 guests.
       </p>
       <div class="hero-actions">
         <a href="#menu" class="btn btn-primary btn-lg" id="view-menu-hero">🍽 View Our Menu</a>
@@ -308,7 +340,7 @@
     <div class="container">
       <div class="about-grid">
         <div class="about-image-wrap fade-in">
-          <img src="images/food/food-6.jpeg" alt="Beautifully plated food at KS on the Keys restaurant" loading="lazy">
+          <img src="images/food/halal-dining-dish-ottawa-6.webp" alt="Plated halal steaks, Mediterranean sides, and comfort dishes at KS on the Keys Ottawa" width="1600" height="2133" loading="lazy" decoding="async">
           <div class="about-badge" aria-label="Over 50 years in business">
             <span class="years">50+</span>
             <span class="since">Years of<br>Excellence</span>
@@ -482,7 +514,7 @@
       </div>
 
       <div style="text-align:center; margin-top:48px;" class="fade-in">
-        <a href="https://order.tbdine.com/pickup/30078/menu" target="_blank" class="btn btn-dark btn-lg" id="full-menu-btn">View Full Menu & Order Online</a>
+        <a href="/menu" class="btn btn-dark btn-lg" id="full-menu-btn">View Full Menu</a>
       </div>
     </div>
   </section>
@@ -504,21 +536,21 @@
   <section class="gallery-section" aria-label="Photo Gallery">
     <div class="container fade-in">
       <div class="gallery-grid">
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-1.jpeg" alt="KS Feature Food" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-2.jpeg" alt="Fresh ingredients" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-3.jpeg" alt="Plated dish" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-7.jpeg" alt="KS specialty" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-8.jpeg" alt="KS classic menu item" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-9.jpeg" alt="Dining experience" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-10.jpeg" alt="Restaurant atmosphere" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-12.jpeg" alt="Fresh meals" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-14.jpeg" alt="Signature plates" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-15.jpeg" alt="Warm dining" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-4.jpeg" alt="Appetizers" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-5.jpeg" alt="Delicious meals" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-6.jpeg" alt="Beautifully plated food" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-11.jpeg" alt="KS favourites" loading="lazy"><div class="gallery-item-overlay"></div></div>
-        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/food-13.jpeg" alt="Dinner at KS" loading="lazy"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-1.webp" alt="Freshly baked gourmet pizza with melted cheese from KS on the Keys Ottawa" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-2.webp" alt="Crispy fried calamari appetizer served with dipping sauces at KS on the Keys" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-3.webp" alt="Grilled halal souvlaki skewers with rice pilaf, roasted potatoes, and Greek salad" width="1600" height="1448" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-7.webp" alt="Lebanese chicken shawarma plate with hummus, fattoush, and warm pita in Ottawa" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-8.webp" alt="Gourmet Tuscan chicken sandwich with crispy fries at KS on the Keys Ottawa" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-9.webp" alt="Fresh Mediterranean chickpea and arugula salad with feta at KS on the Keys" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-10.webp" alt="8oz AAA halal New York strip loin steak with roasted potatoes and vegetables" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-12.webp" alt="Crispy halal chicken wings and appetizers on the table at KS on the Keys" width="1600" height="1695" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-14.webp" alt="Golden panko-crusted fish and chips with house-made tartar sauce" width="1600" height="1343" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-15.webp" alt="Assorted halal entrees, pasta, and pizza served family-style at KS on the Keys" width="1600" height="1200" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-4.webp" alt="Halal General Tao chicken with peppers and onions at KS on the Keys Ottawa" width="1600" height="1248" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-5.webp" alt="Creamy seafood linguini pescatore with shrimp and scallops at KS on the Keys" width="1600" height="2133" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-6.webp" alt="Plated halal steaks, Mediterranean sides, and comfort dishes at KS on the Keys Ottawa" width="1600" height="2133" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-11.webp" alt="Bombay butter chicken with jasmine rice served at KS on the Keys Ottawa" width="1600" height="1534" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
+        <div class="gallery-item"><img class="lightbox-trigger" src="images/food/halal-dining-dish-ottawa-13.webp" alt="Colorful Florida Winter salad with strawberries, pecans, and goat cheese" width="1600" height="1758" loading="lazy" decoding="async"><div class="gallery-item-overlay"></div></div>
       </div>
     </div>
   </section>
@@ -657,7 +689,7 @@
     </div>
   </section>
 
-          <!-- ══ FOOTER ══ -->
+            <!-- ══ FOOTER ══ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -672,7 +704,8 @@
         <div class="footer-col">
           <h4>Dining</h4>
           <ul>
-            <li><a href="#menu">Our Menu</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
             <li><a href="/breakfast-buffet">Breakfast Buffet</a></li>
             <li><a href="/brunch-buffet">Brunch Buffet</a></li>
@@ -710,8 +743,8 @@
       <div class="footer-bottom">
         <p>© 2026 KS on the Keys Restaurant. 1029 Dazé Street, Ottawa, ON K1V 2G3. All rights reserved.</p>
         <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
-          <a href="#" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+          <a href="https://www.facebook.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
+          <a href="https://www.instagram.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
         </div>
       </div>
     </div>

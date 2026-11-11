@@ -17,6 +17,10 @@
   <meta name="twitter:title" content="Sunday Swing Live Big Band in Ottawa | KS on the Keys">
   <meta name="twitter:description" content="Experience live big band, jazz, swing, and soul at KS on the Keys in Ottawa South. Sunday Swing returns in spring 2027. Follow us on Facebook for dates.">
   <meta name="twitter:image" content="https://www.ksonthekeys.com/images/exterior/exterior-1.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&display=swap"></noscript>
   <link rel="stylesheet" href="css/styles.css">
   <!-- Google Analytics 4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-C62JPPWXDK"></script>
@@ -33,14 +37,16 @@
     "@type": "Restaurant",
     "name": "KS on the Keys",
     "url": "https://www.ksonthekeys.com",
-    "logo": "https://www.ksonthekeys.com/images/logo.png",
-    "image": "https://www.ksonthekeys.com/images/exterior/exterior-1.png",
+    "logo": "https://www.ksonthekeys.com/images/ks-on-the-keys-logo-ottawa.webp",
+    "image": "https://www.ksonthekeys.com/images/exterior/ks-on-the-keys-exterior-south-keys-ottawa.webp",
     "telephone": "613-521-0498",
     "email": "RSVP@ksrestaurant.ca",
-    "foundingDate": "1971-05",
+    "foundingDate": "1971",
     "priceRange": "$$",
-    "acceptsReservations": "True",
-    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza"],
+    "hasMenu": "https://www.ksonthekeys.com/menu",
+    "acceptsReservations": "https://www.tbdine.com/book/restaurant/ks-on-the-keys-restaurant?idApp=69099&language=en-us",
+    "areaServed": "Ottawa",
+    "servesCuisine": ["Lebanese", "Italian", "Chinese", "Canadian", "Pizza", "Halal"],
     "address": {
       "@type": "PostalAddress",
       "streetAddress": "1029 Dazé Street",
@@ -49,6 +55,31 @@
       "postalCode": "K1V 2G3",
       "addressCountry": "CA"
     },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 45.3547,
+      "longitude": -75.6562
+    },
+    "amenityFeature": [
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Free on-site parking",
+        "value": true
+      },
+      {
+        "@type": "LocationFeatureSpecification",
+        "name": "Private dining and event rooms",
+        "value": true
+      }
+    ],
+    "sameAs": [
+      "https://www.facebook.com/ksonthekeys",
+      "https://www.instagram.com/ksonthekeys",
+      "https://www.tiktok.com/@ksonthekeys",
+      "https://maps.google.com/?q=KS+on+the+Keys+1029+Daze+Street+Ottawa",
+      "https://www.tripadvisor.ca/Restaurant_Review-g155004-d708046-Reviews-KS_on_the_Keys_Restaurant-Ottawa_Ontario.html",
+      "https://www.yelp.ca/biz/ks-on-the-keys-restaurant-ottawa"
+    ],
     "openingHoursSpecification": [
       {
         "@type": "OpeningHoursSpecification",
@@ -77,10 +108,30 @@
     ]
   }
   </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://www.ksonthekeys.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Big Band Ottawa",
+        "item": "https://www.ksonthekeys.com/big-band-ottawa"
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
-          <!-- ══ TOP BAR ══ -->
+            <!-- ══ TOP BAR ══ -->
   <div class="top-bar">
     <div class="top-bar-inner container">
       <span>📍 1029 Dazé Street, Ottawa, ON K1V 2G3</span>
@@ -97,15 +148,15 @@
   <nav class="navbar subpage-nav" id="navbar">
     <div class="navbar-inner">
       <a href="/" class="logo" aria-label="KS on the Keys Home">
-        <img src="images/logo.png" alt="KS on the Keys Restaurant logo" class="logo-img">
+        <img src="images/ks-on-the-keys-logo-ottawa.webp" alt="KS on the Keys restaurant logo in South Keys, Ottawa" class="logo-img" width="240" height="240">
       </a>
 
       <ul class="nav-links" role="navigation" aria-label="Main navigation">
-        <li><a href="/#about">About</a></li>
+        <li><a href="/about">About</a></li>
         <li class="has-dropdown">
           <span>Menu ▾</span>
           <ul class="dropdown">
-            <li><a href="/#menu">Full Menu</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
           </ul>
         </li>
@@ -162,8 +213,8 @@
   <!-- ══ MOBILE MENU ══ -->
   <nav class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="Mobile navigation">
     <button class="mobile-close" id="mobile-close" aria-label="Close menu">✕</button>
-    <a href="/#about" class="mobile-link">About</a>
-    <a href="/#menu" class="mobile-link">Menu</a>
+    <a href="/about" class="mobile-link">About</a>
+    <a href="/menu" class="mobile-link">Full Menu</a>
     <a href="/dailyspecials" class="mobile-link">Daily Specials</a>
     <a href="/event-spaces" class="mobile-link">Event Spaces</a>
     <a href="/catering" class="mobile-link">Catering</a>
@@ -192,7 +243,7 @@
 
   <!-- ══ HERO ══ -->
   <section class="subpage-hero" aria-label="Sunday Swing Live Music">
-    <div class="subpage-hero-bg" style="background-image: url('images/events/big-band-hero.jpg');"></div>
+    <div class="subpage-hero-bg" style="background-image: url('images/events/sunday-swing-big-band-ottawa.webp');"></div>
     <div class="subpage-hero-overlay"></div>
     <div class="subpage-hero-content fade-in">
       <p class="hero-eyebrow" style="justify-content:center;">Live Music Sundays</p>
@@ -272,7 +323,7 @@
     </div>
   </section>
 
-          <!-- ══ FOOTER ══ -->
+            <!-- ══ FOOTER ══ -->
   <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer-grid">
@@ -287,7 +338,8 @@
         <div class="footer-col">
           <h4>Dining</h4>
           <ul>
-            <li><a href="/#menu">Our Menu</a></li>
+            <li><a href="/about">About Us</a></li>
+            <li><a href="/menu">Full Menu</a></li>
             <li><a href="/dailyspecials">Daily Specials</a></li>
             <li><a href="/breakfast-buffet">Breakfast Buffet</a></li>
             <li><a href="/brunch-buffet">Brunch Buffet</a></li>
@@ -325,8 +377,8 @@
       <div class="footer-bottom">
         <p>© 2026 KS on the Keys Restaurant. 1029 Dazé Street, Ottawa, ON K1V 2G3. All rights reserved.</p>
         <div class="social-links" aria-label="Social media links">
-          <a href="#" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
-          <a href="#" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
+          <a href="https://www.facebook.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Facebook" title="Follow us on Facebook">f</a>
+          <a href="https://www.instagram.com/ksonthekeys" target="_blank" rel="noopener" class="social-link" aria-label="Instagram" title="Follow us on Instagram">📷</a>
         </div>
       </div>
     </div>
