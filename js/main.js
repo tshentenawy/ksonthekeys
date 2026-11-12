@@ -72,20 +72,32 @@ closeMenu();
 }
 });
 const fadeEls = document.querySelectorAll('.fade-in');
+if ('IntersectionObserver' in window) {
 const observer = new IntersectionObserver((entries) => {
-entries.forEach((entry, i) => {
+entries.forEach((entry) => {
 if (entry.isIntersecting) {
-setTimeout(() => {
 entry.target.classList.add('visible');
-}, 80);
 observer.unobserve(entry.target);
 }
 });
 }, {
-threshold: 0.1,
-rootMargin: '0px 0px -40px 0px'
+threshold: 0,
+rootMargin: '0px 0px 50px 0px'
 });
 fadeEls.forEach(el => observer.observe(el));
+} else {
+fadeEls.forEach(el => el.classList.add('visible'));
+}
+window.addEventListener('load', () => {
+setTimeout(() => {
+document.querySelectorAll('.fade-in:not(.visible)').forEach(el => {
+const rect = el.getBoundingClientRect();
+if (rect.top < window.innerHeight + 200) {
+el.classList.add('visible');
+}
+});
+}, 300);
+});
 const navbar = document.getElementById('navbar');
 let lastScroll = 0;
 window.addEventListener('scroll', () => {

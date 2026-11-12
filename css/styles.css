@@ -89,3 +89,6 @@
 .btn-lg{font-size:clamp(0.8rem,3.5vw,0.88rem);padding:13px 16px}
 .btn-eventbrite{width:100% !important;font-size:clamp(0.76rem,3.5vw,0.84rem) !important;padding:13px 16px !important;white-space:normal !important}
 }
+@media (prefers-reduced-motion: reduce){
+.fade-in{opacity:1 !important;transform:none !important;transition:none !important}
+}
