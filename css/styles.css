@@ -92,3 +92,29 @@
 @media (prefers-reduced-motion: reduce){
 .fade-in{opacity:1 !important;transform:none !important;transition:none !important}
 }
+/* Multi-option pricing (Stir-Fries, Pad Thai, Souvlaki) */
+.menu-card-price-options,
+#stir-fries .menu-card-price,
+#panel-stir-fries .menu-card-price,
+.menu-card-price.menu-card-price-options{
+font-family:var(--font-serif);
+font-size:0.88rem;
+font-weight:600;
+line-height:1.45;
+white-space:normal;
+word-break:normal;
+overflow-wrap:normal;
+width:100%;
+text-align:left;
+margin-top:10px;
+color:var(--burgundy);
+letter-spacing:0.01em;
+}
+@media (max-width:600px){
+.menu-card-price-options,
+#stir-fries .menu-card-price,
+#panel-stir-fries .menu-card-price,
+.menu-card-price.menu-card-price-options{
+font-size:0.82rem;
+}
+}
